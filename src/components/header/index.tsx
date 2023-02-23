@@ -9,7 +9,6 @@ import Menu from "../menu";
 
 interface IHeader {
   onToggleSearch: () => void;
-
   onToggleSideBar: () => void;
 }
 
@@ -30,9 +29,8 @@ const Header: React.FC<IHeader> = (props) => {
               <div className="col-md-9 col-xs-6 text-right header-top-right ">
                 <ul className="list-inline nav-topbar d-none d-md-inline">
                   <li className="list-inline-item">
-                    <Link to="/">
-                      <i className="elegant-icon icon_document_alt mr-5" />
-                      About
+                    <Link to="/about">
+                      关于作者
                     </Link>
                   </li>
                 </ul>

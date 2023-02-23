@@ -3,6 +3,7 @@ import Layout from './components/layout';
 import Header from './components/header';
 import Search from './components/search';
 import SideBar from './components/sidebar';
+import Footer from "./components/footer";
 
 function App() {
   const [searchModal, setSearchModal] = useState<boolean>(false);
@@ -23,6 +24,9 @@ function App() {
         <Header onToggleSearch={onToggleSearch} onToggleSideBar={onToggleSideBar} />
         {/* 搜索框 Search */}
         <Search visible={searchModal} />
+
+        {/* 页脚 Footer */}
+        <Footer />
       </Layout>
     </>
   )

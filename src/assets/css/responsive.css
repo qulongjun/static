@@ -31,7 +31,7 @@
     .header-sticky .main-nav button {
         border: 0;
         background: none;
-        font-family: "Noto Sans JP", sans-serif;
+        font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
         margin-top: 14px;
         color: var(--color-muted) !important;
     }
@@ -74,7 +74,7 @@
 @media (min-width:576px) and (max-width:767px){
     .grid-sizer,
     .grid-item{width:50%;}
-    
+
 }
 @media (min-width:768px){
     .grid-sizer,
