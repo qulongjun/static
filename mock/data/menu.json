@@ -1,0 +1,428 @@
+{
+  "menu": [
+    {
+      "label": "首页",
+      "link": "/",
+      "icon": "elegant-icon icon_house_alt",
+      "type": "common"
+    },
+    {
+      "label": "前端の乱炖",
+      "link": "/front-end",
+      "type": "common"
+    },
+    {
+      "label": "Leetcode专辑",
+      "link": "/leetcode",
+      "type": "mega",
+      "children": [
+        {
+          "label": "基本",
+          "link": "/fundamentals",
+          "children": [
+            {
+              "label": "数组",
+              "link": "/array"
+            },
+            {
+              "label": "字符串",
+              "link": "/string"
+            },
+            {
+              "label": "排序",
+              "link": "/sorting"
+            },
+            {
+              "label": "矩阵",
+              "link": "/matrix"
+            },
+            {
+              "label": "模拟",
+              "link": "/simulation"
+            },
+            {
+              "label": "枚举",
+              "link": "/enumeration"
+            },
+            {
+              "label": "字符串匹配",
+              "link": "/string-matching"
+            },
+            {
+              "label": "桶排序",
+              "link": "/bucket-sort"
+            },
+            {
+              "label": "计数排序",
+              "link": "/counting-sort"
+            },
+            {
+              "label": "基数排序",
+              "link": "/radix-sort"
+            }
+          ]
+        },
+        {
+          "label": "算法",
+          "link": "/algorithms",
+          "children": [
+            {
+              "label": "动态规划",
+              "link": "/dynamic-programming"
+            },
+            {
+              "label": "深度优先搜索",
+              "link": "/depth-first-search"
+            },
+            {
+              "label": "贪心",
+              "link": "/greedy"
+            },
+            {
+              "label": "广度优先搜索",
+              "link": "/breadth-first-search"
+            },
+            {
+              "label": "二分查找",
+              "link": "/binary-search"
+            },
+            {
+              "label": "回溯",
+              "link": "/backtracking"
+            },
+            {
+              "label": "递归",
+              "link": "/recursion"
+            },
+            {
+              "label": "分治",
+              "link": "/divide-and-conquer"
+            },
+            {
+              "label": "记忆化搜索",
+              "link": "/memoization"
+            },
+            {
+              "label": "归并排序",
+              "link": "/merge-sort"
+            },
+            {
+              "label": "快速选择",
+              "link": "/quickselect"
+            }
+          ]
+        },
+        {
+          "label": "基础数据结构",
+          "link": "/common-data-structures",
+          "children": [
+            {
+              "label": "哈希表",
+              "link": "/hash-table"
+            },
+            {
+              "label": "树",
+              "link": "/tree"
+            },
+            {
+              "label": "二叉树",
+              "link": "/binary-tree"
+            },
+            {
+              "label": "栈",
+              "link": "/stack"
+            },
+            {
+              "label": "堆（优先队列）",
+              "link": "/heap-priority-queue"
+            },
+            {
+              "label": "图",
+              "link": "/graph"
+            },
+            {
+              "label": "链表",
+              "link": "/linked-list"
+            },
+            {
+              "label": "二叉搜索树",
+              "link": "/binary-search-tree"
+            },
+            {
+              "label": "单调栈",
+              "link": "/monotonic-stack"
+            },
+            {
+              "label": "有序集合",
+              "link": "/ordered-set"
+            },
+            {
+              "label": "队列",
+              "link": "/queue"
+            },
+            {
+              "label": "拓扑排序",
+              "link": "/topological-sort"
+            },
+            {
+              "label": "最短路",
+              "link": "/shortest-path"
+            },
+            {
+              "label": "单调队列",
+              "link": "/monotonic-queue"
+            },
+            {
+              "label": "双向链表",
+              "link": "/doubly-linked-list"
+            },
+            {
+              "label": "最小生成树",
+              "link": "/minimum-spanning-tree"
+            },
+            {
+              "label": "欧拉回路",
+              "link": "/eulerian-circuit"
+            },
+            {
+              "label": "双连通分量",
+              "link": "/biconnected-component"
+            },
+            {
+              "label": "强连通分量",
+              "link": "/strongly-connected-component"
+            }
+          ]
+        },
+        {
+          "label": "高级数据结构",
+          "link": "/advanced-data-structures",
+          "children": [
+            {
+              "label": "并查集",
+              "link": "/union-find"
+            },
+            {
+              "label": "字典树",
+              "link": "/trie"
+            },
+            {
+              "label": "线段树",
+              "link": "/segment-tree"
+            },
+            {
+              "label": "树状数组",
+              "link": "/binary-indexed-tree"
+            },
+            {
+              "label": "后缀数组",
+              "link": "/suffix-array"
+            }
+          ]
+        },
+        {
+          "label": "技巧",
+          "link": "/techniques",
+          "children": [
+            {
+              "label": "双指针",
+              "link": "/two-pointers"
+            },
+            {
+              "label": "位运算",
+              "link": "/bit-manipulation"
+            },
+            {
+              "label": "前缀和",
+              "link": "/prefix-sum"
+            },
+            {
+              "label": "计数",
+              "link": "/counting"
+            },
+            {
+              "label": "滑动窗口",
+              "link": "/sliding-window"
+            },
+            {
+              "label": "状态压缩",
+              "link": "/bitmask"
+            },
+            {
+              "label": "哈希函数",
+              "link": "/hash-function"
+            },
+            {
+              "label": "滚动哈希",
+              "link": "/rolling-hash"
+            },
+            {
+              "label": "扫描线",
+              "link": "/line-sweep"
+            }
+          ]
+        },
+        {
+          "label": "数学",
+          "link": "/math",
+          "children": [
+            {
+              "label": "数学",
+              "link": "/math"
+            },
+            {
+              "label": "几何",
+              "link": "/geometry"
+            },
+            {
+              "label": "数论",
+              "link": "/number-theory"
+            },
+            {
+              "label": "博弈",
+              "link": "/game-theory"
+            },
+            {
+              "label": "组合数学",
+              "link": "/combinatorics"
+            },
+            {
+              "label": "随机化",
+              "link": "/randomized"
+            },
+            {
+              "label": "概率与统计",
+              "link": "/probability-and-statistics"
+            },
+            {
+              "label": "水塘抽样",
+              "link": "/reservoir-sampling"
+            },
+            {
+              "label": "拒绝采样",
+              "link": "/rejection-sampling"
+            }
+          ]
+        },
+        {
+          "label": "其他",
+          "link": "/other",
+          "children": [
+            {
+              "label": "数据库",
+              "link": "/database"
+            },
+            {
+              "label": "设计",
+              "link": "/design"
+            },
+            {
+              "label": "数据流",
+              "link": "/data-stream"
+            },
+            {
+              "label": "交互",
+              "link": "/interactive"
+            },
+            {
+              "label": "脑筋急转弯",
+              "link": "/brainteaser"
+            },
+            {
+              "label": "迭代器",
+              "link": "/iterator"
+            },
+            {
+              "label": "多线程",
+              "link": "/concurrency"
+            },
+            {
+              "label": "",
+              "link": "/shell"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "日新计划",
+      "link": "/daily",
+      "type": "common"
+    },
+    {
+      "label": "Awesome",
+      "link": "/awesome",
+      "type": "common"
+    },
+    {
+      "label": "博客·随笔",
+      "link": "/blog",
+      "type": "common"
+    },
+    {
+      "label": "日志",
+      "link": "/log",
+      "type": "common"
+    }
+  ],
+  "nav": [
+    {
+      "label": "首页",
+      "link": "/"
+    },
+    {
+      "label": "前端の乱炖",
+      "link": "/front-end"
+    },
+    {
+      "label": "Leetcode专辑",
+      "link": "/leetcode",
+      "children": [
+        {
+          "label": "基本",
+          "link": "/fundamentals"
+        },
+        {
+          "label": "算法",
+          "link": "/algorithms"
+        },
+        {
+          "label": "基础数据结构",
+          "link": "/common-data-structures"
+        },
+        {
+          "label": "高级数据结构",
+          "link": "/advanced-data-structures"
+        },
+        {
+          "label": "技巧",
+          "link": "/techniques"
+        },
+        {
+          "label": "数学",
+          "link": "/math"
+        },
+        {
+          "label": "其他",
+          "link": "/other"
+        }
+      ]
+    },
+    {
+      "label": "日新计划",
+      "link": "/daily"
+    },
+    {
+      "label": "Awesome",
+      "link": "/awesome"
+    },
+    {
+      "label": "博客·随笔",
+      "link": "/blog"
+    },
+    {
+      "label": "日志",
+      "link": "/log"
+    }
+  ]
+}
