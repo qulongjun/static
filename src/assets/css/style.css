@@ -216,7 +216,7 @@ h1.logo{font-weight:700;font-size:30px;line-height:1;margin:0;}
 .line-dots::after{content:'';height:1px;width:100%;border-bottom:dotted 1px #222;position:absolute;top:2px;left:0;}
 button.search-icon{border:none;background:none;padding:0;font-weight:500;line-height:1;}
 .header-social-network{line-height:1}
-.header-social-network .list-inline-item a{background:var(--color-primary);width:24px;display:block;height:24px;border-radius:30px;line-height:24px;text-align:center;font-size:11px;color:#fff!important;}
+.header-social-network .list-inline-item a{background:var(--color-primary);width:24px;display:block;height:24px;border-radius:30px;line-height:24px;text-align:center;font-size:13px;color:#fff!important;display: flex;align-items: center;justify-content: center}
 .header-social-network .list-inline-item:not(:last-child){margin-right:7px}
 
 /*Offcanvas Sidebar*/
@@ -358,6 +358,7 @@ header .search-icon .ti-close,
 
 /*Pagination*/
 .pagination-area .page-item{margin:0}
+.pagination-area .pagination-nav {display: flex; justify-content: center; align-items: center}
 .pagination-area .page-item:first-child{margin:0}
 .pagination-area .page-link,
 #scrollUp{border:0;font-size:13px;box-shadow:none;outline:0;color:#889097;background:#fff;border-radius:50%;width:40px;height:40px;text-align:center;line-height:40px;padding:0;margin-right:10px;box-shadow:0 2px 4px var(--button-shadow-color-normal),0 0 0 transparent;transition:all .25s cubic-bezier(.02,.01,.47,1);}
@@ -365,7 +366,7 @@ header .search-icon .ti-close,
 #scrollUp:hover{box-shadow:0 4px 8px var(--button-shadow-color-hover),0 0 0 transparent;}
 .pagination-area .page-item.active .page-link{color:#fff!important;}
 .page-item:last-child .page-link,
-.page-item:first-child .page-link{border-radius:50%!important;background:none;}
+.page-item:first-child .page-link{border-radius:50%!important;}
 #scrollUp{background-color:var(--color-primary);color:#fff;}
 h1.page-404 {font-size: 5.2rem;}
 

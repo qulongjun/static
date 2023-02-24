@@ -10,9 +10,7 @@ import App from "../App";
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-      </Routes>
+      <App />
     </BrowserRouter>
   );
 };

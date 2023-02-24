@@ -1,10 +1,9 @@
-import React from 'react';
-
 /**
  * @File
  * @Author author@static.vip
  * @Date 2023/2/23 16:29:01
  */
+import React from 'react';
 
 export type MenuType = 'sub' | 'mega' | 'common';
 

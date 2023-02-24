@@ -2,6 +2,53 @@
 # yarn lockfile v1
 
 
+"@ant-design/colors@^7.0.0":
+  version "7.0.0"
+  resolved "https://mirrors.tencent.com/npm/@ant-design%2fcolors/-/colors-7.0.0.tgz#eb7eecead124c3533aea05d61254f0a17f2b61b3"
+  integrity sha512-iVm/9PfGCbC0dSMBrz7oiEXZaaGH7ceU40OJEfKmyuzR9R5CRimJYPlRiFtMQGQcbNMea/ePcoIebi4ASGYXtg==
+  dependencies:
+    "@ctrl/tinycolor" "^3.4.0"
+
+"@ant-design/icons-svg@^4.2.1":
+  version "4.2.1"
+  resolved "https://mirrors.tencent.com/npm/@ant-design%2ficons-svg/-/icons-svg-4.2.1.tgz#8630da8eb4471a4aabdaed7d1ff6a97dcb2cf05a"
+  integrity sha512-EB0iwlKDGpG93hW8f85CTJTs4SvMX7tt5ceupvhALp1IF44SeUFOMhKUOYqpsoYWQKAOuTRDMqn75rEaKDp0Xw==
+
+"@ant-design/icons@^5.0.1":
+  version "5.0.1"
+  resolved "https://mirrors.tencent.com/npm/@ant-design%2ficons/-/icons-5.0.1.tgz#febb1fdc5776f58187b2c953ac9a4496069d045b"
+  integrity sha512-ZyF4ksXCcdtwA/1PLlnFLcF/q8/MhwxXhKHh4oCHDA4Ip+ZzAHoICtyp4wZWfiCVDP0yuz3HsjyvuldHFb3wjA==
+  dependencies:
+    "@ant-design/colors" "^7.0.0"
+    "@ant-design/icons-svg" "^4.2.1"
+    "@babel/runtime" "^7.11.2"
+    classnames "^2.2.6"
+    rc-util "^5.9.4"
+
+"@babel/runtime@^7.11.2", "@babel/runtime@^7.18.3":
+  version "7.21.0"
+  resolved "https://mirrors.tencent.com/npm/@babel%2fruntime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
+  integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
+"@bramus/pagination-sequence@^1.2.0":
+  version "1.2.0"
+  resolved "https://mirrors.tencent.com/npm/@bramus%2fpagination-sequence/-/pagination-sequence-1.2.0.tgz#42d14b093f7a3d64444733366a2ce113d889ca1a"
+  integrity sha512-CtXEPvGEABRQkR/Lp251T8CTv6zAwrU6yzhF+2BjzV6KjCW6SR3y7GPqOQFTEo3/x5pgbeZiSKhz74xgTCx33A==
+  dependencies:
+    "@bramus/range" "^1.1.2"
+
+"@bramus/range@^1.1.2":
+  version "1.1.2"
+  resolved "https://mirrors.tencent.com/npm/@bramus%2frange/-/range-1.1.2.tgz#7fa62eb82288fd211e2c315210555e73c9e57c2e"
+  integrity sha512-Mq/NuO98f8SP8ofrBDkM/6HlTAKSDC6Ikl+x3ihQdOvWaDkhMI0O7XtKTYgyUxYLR2ioVyDcjnXFK0fHk1Kiog==
+
+"@ctrl/tinycolor@^3.4.0":
+  version "3.6.0"
+  resolved "https://mirrors.tencent.com/npm/@ctrl%2ftinycolor/-/tinycolor-3.6.0.tgz#53fa5fe9c34faee89469e48f91d51a3766108bc8"
+  integrity sha512-/Z3l6pXthq0JvMYdUFyX9j0MaCltlIn6mfh9jLyQwg5aPKxkyNa0PTHtU1AlFXLNk55ZuAeJRcpvq+tmLfKmaQ==
+
 "@esbuild/android-arm64@0.16.17":
   version "0.16.17"
   resolved "https://mirrors.tencent.com/npm/@esbuild%2fandroid-arm64/-/android-arm64-0.16.17.tgz#cf91e86df127aa3d141744edafcba0abdc577d23"
@@ -279,6 +326,13 @@
     "@types/history" "^4.7.11"
     "@types/react" "*"
 
+"@types/react-slick@^0.23.10":
+  version "0.23.10"
+  resolved "https://mirrors.tencent.com/npm/@types%2freact-slick/-/react-slick-0.23.10.tgz#56126e6e4e95cdce7771535b2811c2c1931a7caa"
+  integrity sha512-ZiqdencANDZy6sWOWJ54LDvebuXFEhDlHtXU9FFipQR2BcYU2QJxZhvJPW6YK7cocibUiNn+YvDTbt1HtCIBVA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^18.0.27":
   version "18.0.28"
   resolved "https://mirrors.tencent.com/npm/@types%2freact/-/react-18.0.28.tgz"
@@ -384,7 +438,7 @@ chokidar@^3.5.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
-classnames@^2.3.2:
+classnames@^2.2.5, classnames@^2.2.6, classnames@^2.3.2:
   version "2.3.2"
   resolved "https://mirrors.tencent.com/npm/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
@@ -461,6 +515,11 @@ encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://mirrors.tencent.com/npm/encodeurl/-/encodeurl-1.0.2.tgz"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
+
+enquire.js@^2.1.6:
+  version "2.1.6"
+  resolved "https://mirrors.tencent.com/npm/enquire.js/-/enquire.js-2.1.6.tgz#3e8780c9b8b835084c3f60e166dbc3c2a3c89814"
+  integrity sha1-PoeAybi4NQhMP2DhZtvDwqPImBQ=
 
 esbuild@0.11.3:
   version "0.11.3"
@@ -648,6 +707,18 @@ is-number@^7.0.0:
   resolved "https://mirrors.tencent.com/npm/js-tokens/-/js-tokens-4.0.0.tgz"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
+json2mq@^0.2.0:
+  version "0.2.0"
+  resolved "https://mirrors.tencent.com/npm/json2mq/-/json2mq-0.2.0.tgz#b637bd3ba9eabe122c83e9720483aeb10d2c904a"
+  integrity sha1-tje9O6nqvhIsg+lyBIOusQ0skEo=
+  dependencies:
+    string-convert "^0.2.0"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://mirrors.tencent.com/npm/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://mirrors.tencent.com/npm/loose-envify/-/loose-envify-1.4.0.tgz"
@@ -794,6 +865,14 @@ queue-microtask@^1.2.2:
   resolved "https://mirrors.tencent.com/npm/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
+rc-util@^5.9.4:
+  version "5.28.0"
+  resolved "https://mirrors.tencent.com/npm/rc-util/-/rc-util-5.28.0.tgz#9e5e441d5875b8bf0ba56c2f295042a28dcff580"
+  integrity sha512-KYDjhGodswVj29v0TRciKTqRPgumIFvFDndbCD227pitQ+0Cei196rxk+OXb/blu6V8zdTRK5RjCJn+WmHLvBA==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    react-is "^16.12.0"
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://mirrors.tencent.com/npm/react-dom/-/react-dom-18.2.0.tgz"
@@ -802,7 +881,7 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-is@^16.13.1:
+react-is@^16.12.0, react-is@^16.13.1:
   version "16.13.1"
   resolved "https://mirrors.tencent.com/npm/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -830,6 +909,17 @@ react-router@6.8.1:
   dependencies:
     "@remix-run/router" "1.3.2"
 
+react-slick@^0.29.0:
+  version "0.29.0"
+  resolved "https://mirrors.tencent.com/npm/react-slick/-/react-slick-0.29.0.tgz#0bed5ea42bf75a23d40c0259b828ed27627b51bb"
+  integrity sha512-TGdOKE+ZkJHHeC4aaoH85m8RnFyWqdqRfAGkhd6dirmATXMZWAxOpTLmw2Ll/jPTQ3eEG7ercFr/sbzdeYCJXA==
+  dependencies:
+    classnames "^2.2.5"
+    enquire.js "^2.1.6"
+    json2mq "^0.2.0"
+    lodash.debounce "^4.0.8"
+    resize-observer-polyfill "^1.5.0"
+
 react@^18.2.0:
   version "18.2.0"
   resolved "https://mirrors.tencent.com/npm/react/-/react-18.2.0.tgz"
@@ -843,6 +933,16 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+regenerator-runtime@^0.13.11:
+  version "0.13.11"
+  resolved "https://mirrors.tencent.com/npm/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
+  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
+
+resize-observer-polyfill@^1.5.0:
+  version "1.5.1"
+  resolved "https://mirrors.tencent.com/npm/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve@^1.19.0, resolve@^1.22.1:
   version "1.22.1"
@@ -888,6 +988,11 @@ side-channel@^1.0.4:
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
 
+slick-carousel@^1.8.1:
+  version "1.8.1"
+  resolved "https://mirrors.tencent.com/npm/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
+  integrity sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==
+
 source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://mirrors.tencent.com/npm/source-map-js/-/source-map-js-1.0.2.tgz"
@@ -897,6 +1002,11 @@ statuses@~1.5.0:
   version "1.5.0"
   resolved "https://mirrors.tencent.com/npm/statuses/-/statuses-1.5.0.tgz"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+
+string-convert@^0.2.0:
+  version "0.2.1"
+  resolved "https://mirrors.tencent.com/npm/string-convert/-/string-convert-0.2.1.tgz#6982cc3049fbb4cd85f8b24568b9d9bf39eeff97"
+  integrity sha1-aYLMMEn7tM2F+LJFaLnZvznu/5c=
 
 supports-color@^7.1.0:
   version "7.2.0"

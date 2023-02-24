@@ -1,0 +1,19 @@
+{
+  "hotTag": [
+    {
+      "id": 1,
+      "label": "Covid-19",
+      "link": "/Covid-19"
+    },
+    {
+      "id": 2,
+      "label": "React",
+      "link": "/react"
+    },
+    {
+      "id": 3,
+      "label": "重构计划",
+      "link": "/rebuild"
+    }
+  ]
+}

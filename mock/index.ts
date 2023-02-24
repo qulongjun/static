@@ -5,7 +5,9 @@
  */
 import { MockMethod } from 'vite-plugin-mock';
 import menuMock from './menu';
+import globalMock from './global';
 
 export default [
   ...menuMock,
+  ...globalMock,
 ] as MockMethod[];

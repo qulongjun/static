@@ -702,13 +702,15 @@ figure .social-share li:first-child,
 }
 figure .social-share li a,
 .post-thumb .social-share li a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 24px;
     height: 24px;
     line-height: 24px;
     text-align: center;
     border-radius: 50%;
-    font-size: 11px;
+    font-size: 15px;
     color: #fff;
 }
 figure .social-share:hover li:nth-child(1),
@@ -748,6 +750,18 @@ figure .social-share:hover li:last-child,
 .post-thumb .social-share li a.pt,
 .header-social-network .list-inline-item a.pt {
     background: #bd081c;
+}
+.post-thumb .social-share li a.wc,
+.header-social-network .list-inline-item a.wc {
+    background: rgb(25, 184, 76);
+}
+.post-thumb .social-share li a.github,
+.header-social-network .list-inline-item a.github {
+    background: #55acee;
+}
+.post-thumb .social-share li a.zh,
+.header-social-network .list-inline-item a.zh {
+    background: #007aff;
 }
 .thumb-overlay .post-thumb .social-share {
     right: 35px;
