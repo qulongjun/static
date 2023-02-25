@@ -16,13 +16,15 @@ interface IPagination {
   numPages: number;
   /* 当前页码左右数量 */
   numPagesAroundCurrent?: number;
+  /* 首位页码数量 */
+  numPagesAtEdges?: number;
   /* 页码变化事件 */
   onChangePage: (pageNum: number) => void;
 
 }
 
 const Pagination: React.FC<IPagination> = (props) => {
-  const { curPage, numPages, numPagesAroundCurrent = 2, onChangePage } = props;
+  const { curPage, numPages, numPagesAtEdges = 1, numPagesAroundCurrent = 2, onChangePage } = props;
 
   const pageList = useMemo(() => {
 
@@ -30,6 +32,7 @@ const Pagination: React.FC<IPagination> = (props) => {
       curPage,
       numPages,
       numPagesAroundCurrent,
+      numPagesAtEdges,
     });
 
   }, [curPage, numPages, numPagesAroundCurrent]);

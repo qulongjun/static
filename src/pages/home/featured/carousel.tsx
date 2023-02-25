@@ -1,19 +1,19 @@
 /**
- * @File 首页 - 精选文章 - 轮播图
+ * @File 首页 - 精选主题 - 轮播图
  * @Author author@static.vip
  * @Date 2023/2/24 15:40:21
  */
 import React, { useMemo } from 'react';
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { getArticleUrl } from "../utils/url";
-import { IArticle } from "../interfaces/article";
+import { getArticleUrl } from "../../../utils/url";
+import { IArticle } from "../../../interfaces/article";
 
 interface IPostCarousel {
   articles: IArticle[] | null;
 }
 
-const PostCarousel: React.FC<IPostCarousel> = (props) => {
+const Carousel: React.FC<IPostCarousel> = (props) => {
   const { articles } = props;
 
   const settings = useMemo(() => ({
@@ -63,4 +63,4 @@ const PostCarousel: React.FC<IPostCarousel> = (props) => {
   );
 };
 
-export default PostCarousel;
+export default Carousel;

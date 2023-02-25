@@ -190,6 +190,7 @@ sup{color:#000C2D;}
 	100%{opacity:1;transform:rotate(360deg) scale(1.2);}
 }
 .hide{opacity:0;transition-delay:0.5s;pointer-events:none;}
+.text-limit-1-row{overflow:hidden!important;display:-webkit-box!important;-webkit-line-clamp:1!important;-webkit-box-orient:vertical;}
 .text-limit-2-row{overflow:hidden!important;display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical;}
 .text-limit-3-row{overflow:hidden!important;display:-webkit-box!important;-webkit-line-clamp:3!important;-webkit-box-orient:vertical;}
 .scroll-progress{height:3px;width:0px;z-index:9999999;position:fixed;top:0;}

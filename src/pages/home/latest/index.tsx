@@ -10,25 +10,30 @@ import Share from '../../../components/share';
 import Pagination from '../../../components/pagation';
 import { get } from '../../../utils/request';
 import { IArticle, ILeastConfig } from '../../../interfaces/article';
+import {DEFAULT_PAGE_SIZE} from '../../../config';
 
 const Latest: React.FC = () => {
   const [page, setPage] = useState<number>(1);
   const [totalPage, setTotalPage] = useState<number>(20);
   const [article, setArticle] = useState<IArticle[]>([]);
+  const [pageSize, setPageSize] = useState<number>(DEFAULT_PAGE_SIZE);
 
   const onChangePage = useCallback((curPage: number) => {
     setPage(curPage);
   }, []);
 
   const fetchArticle = useCallback(async () => {
-    const article = await get('article/latest') as ILeastConfig;
+    const article = await get('article/latest', {
+        currentPage: page,
+        pageSize,
+    }) as ILeastConfig;
     setArticle(article.list);
-    setTotalPage(Math.ceil(article.count / 20));
-  }, []);
+    setTotalPage(Math.ceil(article.count / pageSize));
+  }, [page, pageSize]);
 
   useEffect(() => {
     fetchArticle().then(() => console.info('latest fetched'));
-  }, [])
+  }, [fetchArticle])
 
 
   return (
@@ -75,7 +80,7 @@ const Latest: React.FC = () => {
           </article>
         ))}
       </div>
-      <Pagination curPage={page} numPages={totalPage} onChangePage={onChangePage} />
+      <Pagination curPage={page} numPages={totalPage} numPagesAroundCurrent={1} onChangePage={onChangePage} />
     </div>
   );
 };

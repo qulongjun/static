@@ -82,7 +82,7 @@ const Footer: React.FC<IFooter> = (props) => {
           {/*      <div className="tagcloud mt-20">*/}
           {/*        {*/}
           {/*          Array.isArray(footer?.thanks) ? footer?.thanks.map((thank, index) => {*/}
-          {/*            return <Link key={index} to={thank.link} className="tag-cloud-link">{thank.label}</Link>*/}
+          {/*            return <Link key={index} to={thank.link} className="tagCloud-cloud-link">{thank.label}</Link>*/}
           {/*          }) : null*/}
           {/*        }*/}
           {/*      </div>*/}

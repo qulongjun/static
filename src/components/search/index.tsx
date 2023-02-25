@@ -32,7 +32,7 @@ const Search: React.FC<ISearch> = (props) => {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="搜索文章..."
+                      placeholder="搜索主题..."
                     />
                     <div className="input-group-append">
                       <button

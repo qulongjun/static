@@ -1,0 +1,58 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "label": "文章分类 - 1",
+      "link": "",
+      "desc": "这是关于文章分类的介绍，这是关于文章分类的介绍",
+      "cover": "assets/imgs/news/news-11.jpg",
+      "articleCount": 20,
+      "date": "刚刚"
+    },
+    {
+      "id": 2,
+      "label": "文章分类 - 2",
+      "link": "",
+      "desc": "这是关于文章分类的介绍，这是关于文章分类的介绍",
+      "cover": "assets/imgs/news/news-13.jpg",
+      "articleCount": 20,
+      "date": "3天前"
+    },
+    {
+      "id": 3,
+      "label": "文章分类 - 3",
+      "link": "",
+      "desc": "这是关于文章分类的介绍，这是关于文章分类的介绍",
+      "cover": "assets/imgs/news/news-13.jpg",
+      "articleCount": 20,
+      "date": "7 August"
+    },
+    {
+      "id": 4,
+      "label": "文章分类 - 4",
+      "link": "",
+      "desc": "这是关于文章分类的介绍，这是关于文章分类的介绍",
+      "cover": "assets/imgs/news/news-11.jpg",
+      "articleCount": 20,
+      "date": "刚刚"
+    },
+    {
+      "id": 5,
+      "label": "文章分类 - 5",
+      "link": "",
+      "desc": "这是关于文章分类的介绍，这是关于文章分类的介绍",
+      "cover": "assets/imgs/news/news-13.jpg",
+      "articleCount": 20,
+      "date": "3天前"
+    },
+    {
+      "id": 6,
+      "label": "文章分类 - 6",
+      "link": "",
+      "desc": "这是关于文章分类的介绍，这是关于文章分类的介绍",
+      "cover": "assets/imgs/news/news-13.jpg",
+      "articleCount": 20,
+      "date": "7 August"
+    }
+  ]
+}

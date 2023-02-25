@@ -1,14 +1,13 @@
 /**
- * @File 首页 - 精选文章
+ * @File 首页 - 精选主题
  * @Author author@static.vip
  * @Date 2023/2/24 14:10:43
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LinkOutlined, QrcodeOutlined, ShareAltOutlined, WechatOutlined } from '@ant-design/icons';
 import { get } from '../../../utils/request';
-import { ITag } from '../../../interfaces/tag';
-import PostCarousel from '../../../components/postCarousel';
+import {ITag, ITagConfig} from '../../../interfaces/tag';
+import Carousel from './carousel';
 import { IFeaturedConfig } from "../../../interfaces/article";
 import { getArticleUrl } from '../../../utils/url';
 import Share from "../../../components/share";
@@ -18,8 +17,8 @@ const Featured: React.FC = () => {
   const [featured, setFeatured] = useState<IFeaturedConfig | null>(null);
 
   const fetchTag = useCallback(async () => {
-    const hotTags = await get('hotTag') as ITag[];
-    setHotTags(hotTags);
+    const hotTags = await get('tag/hot') as ITagConfig;
+    setHotTags(hotTags.list);
   }, []);
 
   const fetchFeaturedArticle = useCallback(async () => {
@@ -28,9 +27,11 @@ const Featured: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetchTag().then(() => console.info('hot tag fetched'));
+    fetchTag().then(() => console.info('hot tagCloud fetched'));
     fetchFeaturedArticle().then(() => console.info('featured article fetched'));
   }, []);
+
+  console.info(hotTags);
 
   return (
     <div className="container">
@@ -38,7 +39,7 @@ const Featured: React.FC = () => {
         <div className="widget-header-3">
           <div className="row align-self-center">
             <div className="col-md-4 align-self-center">
-              <h5 className="widget-title">精选文章</h5>
+              <h5 className="widget-title">每日精选</h5>
             </div>
             <div className="col-md-8 text-md-right font-small align-self-center">
               <p className="d-inline-block mr-5 mb-0">
@@ -63,7 +64,7 @@ const Featured: React.FC = () => {
       <div className="loop-grid mb-30">
         <div className="row">
           <div className="col-lg-8 mb-30">
-            <PostCarousel articles={featured?.carousel ?? null} />
+            <Carousel articles={featured?.carousel ?? null} />
           </div>
           {featured?.list.map((article) => (
             <article key={article.id} className="col-lg-4 col-md-6 mb-30 wow fadeInUp animated" data-wow-delay="0.2s">

@@ -6,9 +6,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import { get } from '../../utils/request';
-import { IArticle } from '../../interfaces/article';
-import { getArticleUrl } from "../../utils/url";
+import { get } from '../../../utils/request';
+import { IArticle } from '../../../interfaces/article';
+import { getArticleUrl } from "../../../utils/url";
 
 const VerticalCarousel: React.FC = () => {
   const [nav1, setNav1] = useState<Slider | null>(null);

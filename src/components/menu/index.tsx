@@ -30,8 +30,6 @@ const Menu: React.FC<IMenu> = (props) => {
     setNavData(response.nav);
   }, []);
 
-  console.info(navData);
-
   useEffect(() => {
     fetchMenu().then(() => console.info('menu and nav fetched'));
   }, [])

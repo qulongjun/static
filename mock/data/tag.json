@@ -1,19 +1,34 @@
 {
-  "hotTag": [
+  "list": [
     {
       "id": 1,
-      "label": "Covid-19",
-      "link": "/Covid-19"
+      "label": "前端",
+      "link": ""
     },
     {
       "id": 2,
-      "label": "React",
-      "link": "/react"
+      "label": "面试指南",
+      "link": ""
     },
     {
       "id": 3,
-      "label": "重构计划",
-      "link": "/rebuild"
+      "label": "数据结构",
+      "link": ""
+    },
+    {
+      "id": 4,
+      "label": "React",
+      "link": ""
+    },
+    {
+      "id": 5,
+      "label": "更新日志",
+      "link": ""
+    },
+    {
+      "id": 6,
+      "label": "Javascript",
+      "link": ""
     }
   ]
 }

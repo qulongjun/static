@@ -5,10 +5,13 @@
  */
 import React from 'react';
 import Featured from "./featured";
-import VerticalCarousel from "../../components/verticalCarousel";
+import VerticalCarousel from "./verticalCarousel";
 import Author from './author';
 import { IAuthor } from "../../interfaces/author";
 import Latest from "./latest";
+import Popular from "./popular";
+import Category from "./category";
+import TagCloud from "./tagCloud";
 
 interface IHome {
   author: IAuthor | null;
@@ -21,7 +24,7 @@ const Home: React.FC<IHome> = (props) => {
     <main>
       <VerticalCarousel />
       <Featured />
-      <div className="bg-grey pt-50 pb-50">
+      <div className="bg-grey pt-50">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -30,6 +33,9 @@ const Home: React.FC<IHome> = (props) => {
             <div className="col-lg-4">
               <div className="widget-area">
                 <Author author={author} />
+                <Popular />
+                <Category />
+                <TagCloud />
               </div>
             </div>
           </div>

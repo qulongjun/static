@@ -40,4 +40,15 @@ export default [
       };
     },
   },
+  {
+    url: '/api/article/popular',
+    method: 'get',
+    response: () => {
+      return {
+        data: {
+          list: posts.slice(0, 5),
+        },
+      };
+    },
+  },
 ] as MockMethod[];

@@ -6,7 +6,6 @@
 import { MockMethod } from 'vite-plugin-mock';
 import author from './data/author.json';
 import footer from './data/footer.json';
-import tag from './data/tag.json';
 
 export default [
   {
@@ -24,15 +23,6 @@ export default [
     response: () => {
       return {
         data: footer,
-      };
-    },
-  },
-  {
-    url: '/api/hotTag',
-    method: 'get',
-    response: () => {
-      return {
-        data: tag.hotTag,
       };
     },
   },

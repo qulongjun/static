@@ -169,7 +169,7 @@
                     '<' + settings.parentTag + ' role="menuitem" aria-haspopup="true" tabindex="-1" className="' + prefix + '_item"/>'
                 );
 
-                // wrap item text with tag and add classes unless we are separating parent links
+                // wrap item text with tagCloud and add classes unless we are separating parent links
                 if ((!settings.allowParentLinks || settings.nestedParentLinks) || !containsAnchor) {
                     var $wrap = $(nodes).wrapAll(wrapElement).parent();
                     $wrap.addClass(prefix+'_row');

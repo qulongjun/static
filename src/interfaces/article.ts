@@ -8,29 +8,29 @@ import { IAuthor } from "./author";
 import { ITag } from "./tag";
 
 export interface IArticle {
-  /* 文章ID */
+  /* 主题ID */
   id: number;
-  /* 文章封面 */
+  /* 主题封面 */
   cover?: string;
-  /* 文章分类 */
+  /* 主题分类 */
   category: ICategory
-  /* 文章标题 */
+  /* 主题标题 */
   title: string;
-  /* 文章作者 */
+  /* 主题作者 */
   author: IAuthor;
-  /* 文章更新日期 */
+  /* 主题更新日期 */
   date: string;
-  /* 文章描述 */
+  /* 主题描述 */
   desc?: string;
-  /* 文章阅读量 */
+  /* 主题阅读量 */
   views?: number;
-  /* 文章标签 */
+  /* 主题标签 */
   tags?: ITag[];
-  /* 文章评论数 */
+  /* 主题评论数 */
   comments?: number;
-  /* 文章点赞数 */
+  /* 主题点赞数 */
   likes?: number;
-  /* 文章评分 */
+  /* 主题评分 */
   rating?: number;
   /* 阅读耗时 */
   readTime?: number;
@@ -39,13 +39,18 @@ export interface IArticle {
 export interface IFeaturedConfig {
   /* 轮播列表 */
   carousel: IArticle[];
-  /* 文章列表 */
+  /* 主题列表 */
   list: IArticle[];
 }
 
 export interface ILeastConfig {
-  /* 文章列表 */
+  /* 主题列表 */
   list: IArticle[];
-  /* 文章数量 */
+  /* 主题数量 */
   count: number;
+}
+
+export interface IPopularConfig {
+  /* 主题列表 */
+  list: IArticle[];
 }

@@ -32,7 +32,7 @@
 		/* Get the id of the UL to get our news content from */
 		var newsID = '#' + $(this).attr('id');
 
-		/* Get the tag type - we will check this later to makde sure it is a UL tag */
+		/* Get the tagCloud type - we will check this later to makde sure it is a UL tagCloud */
 		var tagType = $(this).get(0).tagName; 	
 
 		return this.each(function() { 
