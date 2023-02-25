@@ -1,5 +1,5 @@
 /**
- * @File
+ * @File 页面组件 - 分享
  * @Author author@static.vip
  * @Date 2023/2/24 19:26:01
  */

@@ -1,11 +1,10 @@
 /**
- * @File
+ * @File 首页 - 热门主题
  * @Author author@static.vip
  * @Date 2023/2/25 07:13:51
  */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
-import data from '../../../../mock/data/post.json';
 import {getArticleUrl} from "../../../utils/url";
 import {get} from "../../../utils/request";
 import {IArticle, IPopularConfig} from "../../../interfaces/article";
@@ -24,46 +23,8 @@ const Popular: React.FC = () => {
         fetchArticle().then(() => console.info('popular fetched'));
     }, [])
 
-    /*
     return (
-        <div className="sidebar-widget widget-latest-posts mb-50 wow fadeInUp animated">
-            <div className="widget-header-1 position-relative mb-30">
-                <h5 className="mt-5 mb-30">热门主题</h5>
-            </div>
-            <div className="post-block-list post-module-1">
-                <ul className="list-post">
-                    {
-                        article.map((article )=>(
-                            <li className="mb-30" key={article.id}>
-                                <div className="d-flex hover-up-2 transition-normal">
-                                    <div className="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
-                                        <Link to={getArticleUrl(article.id)} className="color-white">
-                                            <img src={article.cover} alt="" />
-                                        </Link>
-                                    </div>
-                                    <div className="post-content media-body">
-                                        <h6 className="post-title mb-15 text-limit-2-row font-medium">
-                                            <Link to={getArticleUrl(article.id)}>
-                                                {article.title}
-                                            </Link>
-                                        </h6>
-                                        <div className="entry-meta meta-1 float-left font-x-small text-uppercase">
-                                            <span className="post-on">{article.date}</span>
-                                            <span className="post-by has-dot">{article.views} 阅读</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-        </div>
-    )
-    */
-
-    return (
-        <Widget header="热门主题" className={classNames('widget-latest-posts', 'mb-50', 'wow', 'fadeInUp', 'animated')}>
+        <Widget header="热门" className={classNames('widget-recently-posts', 'mb-50', 'wow', 'fadeInUp', 'animated')}>
             <div className="post-block-list post-module-1">
                 <ul className="list-post">
                     {
@@ -72,9 +33,7 @@ const Popular: React.FC = () => {
                                 <div className="d-flex hover-up-2 transition-normal">
                                     <div className="post-content media-body">
                                         <h6 className="post-title mb-15 text-limit-2-row font-medium">
-                                            <Link to={getArticleUrl(article.id)}>
-                                                {article.title}
-                                            </Link>
+                                            <Link to={getArticleUrl(article.id)}>{article.title}</Link>
                                         </h6>
                                         <div className="entry-meta meta-1 float-left font-x-small text-uppercase">
                                             <span className="post-on">{article.date}</span>

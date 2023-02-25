@@ -4,10 +4,10 @@
  * @Date 2023/2/24 15:40:21
  */
 import React, { useMemo } from 'react';
-import Slider from "react-slick";
-import { Link } from "react-router-dom";
-import { getArticleUrl } from "../../../utils/url";
-import { IArticle } from "../../../interfaces/article";
+import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
+import {getArticleUrl, getCategoryUrl} from '../../../utils/url';
+import { IArticle } from '../../../interfaces/article';
 
 interface IPostCarousel {
   articles: IArticle[] | null;
@@ -41,7 +41,7 @@ const Carousel: React.FC<IPostCarousel> = (props) => {
                 </span>
                 <div className="post-content-overlay text-white ml-30 mr-30 pb-30">
                   <div className="entry-meta meta-0 font-small mb-20">
-                    <Link to={item.category.link}>
+                    <Link to={getCategoryUrl(item.category.link)}>
                       <span className="post-cat text-info">{item.category.label}</span>
                     </Link>
                   </div>

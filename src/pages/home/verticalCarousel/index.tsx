@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { get } from '../../../utils/request';
 import { IArticle } from '../../../interfaces/article';
-import { getArticleUrl } from "../../../utils/url";
+import {getArticleUrl, getCategoryUrl} from '../../../utils/url';
 
 const VerticalCarousel: React.FC = () => {
   const [nav1, setNav1] = useState<Slider | null>(null);
@@ -29,8 +29,8 @@ const VerticalCarousel: React.FC = () => {
       <div className="featured-slider-2">
         <div className="featured-slider-2-items" style={{ overflow: 'hidden' }}>
           <Slider asNavFor={nav2 as Slider} ref={(slider1) => setNav1(slider1)}>
-            {articles.map((article, index) => (
-              <div className="slider-single" key={index}>
+            {articles.map((article) => (
+              <div className="slider-single" key={article.id}>
                 <div className="post-thumb position-relative">
                   <div
                     className="thumb-overlay position-relative"
@@ -39,7 +39,7 @@ const VerticalCarousel: React.FC = () => {
                     <div className="post-content-overlay">
                       <div className="container">
                         <div className="entry-meta meta-0 font-small mb-20">
-                          <Link to={`${article.category.link}`}>
+                          <Link to={`${getCategoryUrl(article.category.link)}`}>
                             <span className="post-cat text-info">{article.category.label}</span>
                           </Link>
                         </div>
@@ -72,8 +72,8 @@ const VerticalCarousel: React.FC = () => {
               vertical={true}
               className="featured-slider-2-nav"
             >
-              {articles.map((article, index) => (
-                <div className="slider-post-thumb mr-15 mt-20 position-relative" key={index}>
+              {articles.map((article) => (
+                <div className="slider-post-thumb mr-15 mt-20 position-relative" key={article.id}>
                   <div className="d-flex hover-up-2 transition-normal">
                     <div className="post-thumb post-thumb-80 d-flex mr-15 border-radius-5">
                       <img className="border-radius-5" src={article.cover} alt="" />

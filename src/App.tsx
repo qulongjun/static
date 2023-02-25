@@ -35,7 +35,7 @@ function App() {
         {/* 侧边栏 SideBar */}
         <SideBar visible={sideBarModal} onToggleSideBar={onToggleSideBar} />
         {/* 导航栏 Header */}
-        <Header onToggleSearch={onToggleSearch} onToggleSideBar={onToggleSideBar} />
+        <Header onToggleSearch={onToggleSearch} />
         {/* 搜索框 Search */}
         <Search visible={searchModal} />
 
@@ -45,7 +45,7 @@ function App() {
         </Routes>
 
         {/* 页脚 Footer */}
-        <Footer author={author} />
+        <Footer />
       </Layout>
     </>
   )

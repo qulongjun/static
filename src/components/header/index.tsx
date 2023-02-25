@@ -1,22 +1,21 @@
 /**
- * @File
+ * @File 页面组件 - 页头
  * @Author author@static.vip
  * @Date 2023/2/23 11:15:57
  */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Menu from "../menu";
 
 interface IHeader {
+  /* 触发搜索 */
   onToggleSearch: () => void;
-  onToggleSideBar: () => void;
 }
 
 const Header: React.FC<IHeader> = (props) => {
-  const { onToggleSearch, onToggleSideBar } = props;
+  const { onToggleSearch } = props;
 
   return (
-    <>
       <header className="main-header header-style-1 font-heading">
         <div className="header-top">
           <div className="container">
@@ -29,9 +28,7 @@ const Header: React.FC<IHeader> = (props) => {
               <div className="col-md-9 col-xs-6 text-right header-top-right ">
                 <ul className="list-inline nav-topbar d-none d-md-inline">
                   <li className="list-inline-item">
-                    <Link to="/about">
-                      关于作者
-                    </Link>
+                    <Link to="/about">关于</Link>
                   </li>
                 </ul>
                 <span className="vertical-divider mr-20 ml-20 d-none d-md-inline" />
@@ -45,9 +42,8 @@ const Header: React.FC<IHeader> = (props) => {
             </div>
           </div>
         </div>
-        <Menu onToggleSideBar={onToggleSideBar} />
+        <Menu />
       </header>
-    </>
   );
 };
 

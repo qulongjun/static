@@ -8,7 +8,7 @@ import Featured from "./featured";
 import VerticalCarousel from "./verticalCarousel";
 import Author from './author';
 import { IAuthor } from "../../interfaces/author";
-import Latest from "./latest";
+import Recently from "./recently";
 import Popular from "./popular";
 import Category from "./category";
 import TagCloud from "./tagCloud";
@@ -28,7 +28,7 @@ const Home: React.FC<IHome> = (props) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              <Latest />
+              <Recently />
             </div>
             <div className="col-lg-4">
               <div className="widget-area">

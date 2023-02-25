@@ -1,5 +1,5 @@
 /**
- * @File 页码组件
+ * @File 页面组件 - 页码
  * @Author author@static.vip
  * @Date 2023/2/24 19:41:51
  */

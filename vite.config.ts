@@ -13,5 +13,10 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         logger: true,
       }),
     ],
+    resolve: {
+      alias: {
+        '@': '/src'
+      }
+    }
   }
 }

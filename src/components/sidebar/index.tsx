@@ -1,5 +1,5 @@
 /**
- * @File
+ * @File 页面组件  - 侧边栏
  * @Author author@static.vip
  * @Date 2023/2/23 15:15:56
  */

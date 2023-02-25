@@ -1,5 +1,5 @@
 /**
- * @File
+ * @File 页面组件 - 搜索
  * @Author author@static.vip
  * @Date 2023/2/23 14:03:44
  */
@@ -18,7 +18,6 @@ const Search: React.FC<ISearch> = (props) => {
   }, [visible]);
 
   return (
-    <>
       <div className="main-search-form">
         <div className="container">
           <div className=" pt-50 pb-50 ">
@@ -30,14 +29,14 @@ const Search: React.FC<ISearch> = (props) => {
                 <form action="#" className="search-header">
                   <div className="input-group w-100">
                     <input
-                      type="text"
-                      className="form-control"
-                      placeholder="搜索主题..."
+                        type="text"
+                        className="form-control"
+                        placeholder="搜索主题..."
                     />
                     <div className="input-group-append">
                       <button
-                        className="btn btn-search bg-white"
-                        type="submit"
+                          className="btn btn-search bg-white"
+                          type="submit"
                       >
                         <i className="elegant-icon icon_search" />
                       </button>
@@ -84,11 +83,11 @@ const Search: React.FC<ISearch> = (props) => {
               <div className="col-lg-4">
                 <div className="d-flex bg-grey has-border p-25 hover-up-2 transition-normal border-radius-5 mb-30">
                   <div
-                    className="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
+                      className="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                     <Link to="/single" className="color-white">
                       <img
-                        src="/assets/imgs/news/thumb-2.jpg"
-                        alt=""
+                          src="/assets/imgs/news/thumb-2.jpg"
+                          alt=""
                       />
                     </Link>
                   </div>
@@ -107,11 +106,11 @@ const Search: React.FC<ISearch> = (props) => {
               <div className="col-lg-4 col-md-6">
                 <div className="d-flex bg-grey has-border p-25 hover-up-2 transition-normal border-radius-5 mb-30">
                   <div
-                    className="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
+                      className="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                     <Link to="/single" className="color-white">
                       <img
-                        src="/assets/imgs/news/thumb-4.jpg"
-                        alt=""
+                          src="/assets/imgs/news/thumb-4.jpg"
+                          alt=""
                       />
                     </Link>
                   </div>
@@ -130,11 +129,11 @@ const Search: React.FC<ISearch> = (props) => {
               <div className="col-lg-4  col-md-6">
                 <div className="d-flex bg-grey has-border p-25 hover-up-2 transition-normal border-radius-5 mb-30">
                   <div
-                    className="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
+                      className="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                     <Link to="/single" className="color-white">
                       <img
-                        src="/assets/imgs/news/thumb-3.jpg"
-                        alt=""
+                          src="/assets/imgs/news/thumb-3.jpg"
+                          alt=""
                       />
                     </Link>
                   </div>
@@ -154,7 +153,6 @@ const Search: React.FC<ISearch> = (props) => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

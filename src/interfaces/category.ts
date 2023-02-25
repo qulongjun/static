@@ -11,12 +11,6 @@ export interface ICategory {
   label: string;
   /* 分类链接 */
   link: string;
-  /* 分类封面 */
-  cover?: string;
-  /* 分类描述 */
-  desc?: string;
-  /* 分类更新日期 */
-  date: string;
   /* 文章数量 */
   articleCount?: number;
 }

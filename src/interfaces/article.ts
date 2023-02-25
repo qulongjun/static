@@ -43,7 +43,7 @@ export interface IFeaturedConfig {
   list: IArticle[];
 }
 
-export interface ILeastConfig {
+export interface IRecently {
   /* 主题列表 */
   list: IArticle[];
   /* 主题数量 */
