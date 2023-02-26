@@ -5,6 +5,7 @@
  */
 import { MockMethod } from 'vite-plugin-mock';
 import posts from './data/post.json';
+import article from './data/article.json';
 
 export default [
   {
@@ -51,4 +52,13 @@ export default [
       };
     },
   },
+  {
+    url: '/api/article',
+    method: 'post',
+    response: () => {
+      return {
+        data: article,
+      };
+    },
+  }
 ] as MockMethod[];

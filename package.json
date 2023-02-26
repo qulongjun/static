@@ -20,7 +20,8 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-router-dom": "^6.8.1",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "typo.css": "^2.1.2"
   },
   "devDependencies": {
     "@types/qs": "^6.9.7",

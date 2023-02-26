@@ -5,6 +5,7 @@ import Router from "./routes";
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'typo.css';
 
 import './index.css'
 

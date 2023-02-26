@@ -9,6 +9,7 @@ import { get } from "./utils/request";
 import { IAuthor } from './interfaces/author';
 import Home from './pages/home';
 import NotFound from "./pages/notFound";
+import Article from "./pages/article";
 
 function App() {
   const [searchModal, setSearchModal] = useState<boolean>(false);
@@ -40,6 +41,7 @@ function App() {
         <Search visible={searchModal} />
 
         <Routes>
+          <Route path="/article/:id" element={<Article author={author} />} />
           <Route path="/" element={<Home author={author} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

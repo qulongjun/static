@@ -16,6 +16,8 @@ export interface IArticle {
   category: ICategory
   /* 主题标题 */
   title: string;
+  /* 主题内容 */
+  content?: string;
   /* 主题作者 */
   author: IAuthor;
   /* 主题更新日期 */
