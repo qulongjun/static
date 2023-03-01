@@ -26,7 +26,7 @@ interface ISub {
 const Sub: React.FC<ISub> = (props) => {
   const { author, scroll2Top } = props;
   const { menu, subMenu, grandSubMenu, tagId } = useParams();
-  const [result, setResult] = useState<ICategory | ITag | null>(null);
+  const [result, setResult] = useState<any>(null);
   const [page, setPage] = useState<number>(1);
   const [totalPage, setTotalPage] = useState<number>(20);
   const [article, setArticle] = useState<IArticle[]>([]);
@@ -39,17 +39,18 @@ const Sub: React.FC<ISub> = (props) => {
   const typeLabel = useMemo(() => {
 
     if ( tagId ) {
-      return ['标签'];
+      return [result?.label];
     }
     else {
+
       const data = [];
-      if ( menu ) data.push(menu);
-      if ( subMenu ) data.push(subMenu);
-      if ( grandSubMenu ) data.push(grandSubMenu);
+      data.push(result?.label);
+      if ( result?.children ) data.push(result.children.label);
+      if ( result?.children?.children ) data.push(result.children.children.label);
 
       return data;
     }
-  }, [menu, subMenu, grandSubMenu, tagId]);
+  }, [result, tagId]);
 
   const fetchType = useCallback(async () => {
     if ( tagId ) {
@@ -85,10 +86,10 @@ const Sub: React.FC<ISub> = (props) => {
     <main>
       <div className="archive-header pt-50">
         <div className="container">
-          <h2 className="font-weight-900">{result?.label}</h2>
+          <h2 className="font-weight-900">{result?.children?.children?.label || result?.children?.label || result?.label}</h2>
           <div className="breadcrumb">
             <Link to="/" rel="nofollow">首页</Link>
-            {typeLabel.map((item, index) => (<><span />{item}</>))}
+            {typeLabel.map((item, index) => (<React.Fragment key={index}><span />{item}</React.Fragment>))}
           </div>
           <div className="bt-1 border-color-1 mt-30 mb-50" />
         </div>
