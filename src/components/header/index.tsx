@@ -28,7 +28,7 @@ const Header: React.FC<IHeader> = (props) => {
               <div className="col-md-9 col-xs-6 text-right header-top-right ">
                 <ul className="list-inline nav-topbar d-none d-md-inline">
                   <li className="list-inline-item">
-                    <Link to="/about">关于</Link>
+                    <Link to="/contact">联系我们</Link>
                   </li>
                 </ul>
                 <span className="vertical-divider mr-20 ml-20 d-none d-md-inline" />

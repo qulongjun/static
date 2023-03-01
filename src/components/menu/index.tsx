@@ -79,10 +79,10 @@ const Menu: React.FC = () => {
                                                             <i className={classNames(menu.icon, 'mr-5')}/> : null}
                                                         {menu.label}
                                                     </Link>
-                                                    {menu.children.length !== 0 && (
+                                                    {menu.childList.length !== 0 && (
                                                         <ul className="sub-menu text-muted font-small">
                                                             {
-                                                                menu.children.map((child, childIndex) => {
+                                                                menu.childList.map((child, childIndex) => {
                                                                     return (
                                                                         <li key={childIndex}>
                                                                             <Link
@@ -107,10 +107,10 @@ const Menu: React.FC = () => {
                                                         {menu.label}
                                                     </Link>
                                                     {
-                                                        Array.isArray(menu.children) && (
+                                                        Array.isArray(menu.childList) && (
                                                             <ul className="mega-menu">
                                                                 {
-                                                                    menu.children.map((child, childIndex) => (
+                                                                    menu.childList.map((child, childIndex) => (
                                                                         <li key={childIndex}
                                                                             className="sub-mega-menu sub-mega-menu-width-22">
                                                                             <Link
@@ -118,10 +118,10 @@ const Menu: React.FC = () => {
                                                                                 <strong>{child.label}</strong>
                                                                             </Link>
                                                                             {
-                                                                                Array.isArray(child.children) && (
+                                                                                Array.isArray(child.childList) && (
                                                                                     <ul>
                                                                                         {
-                                                                                            child.children?.map((subChild, subChildIndex) => (
+                                                                                            child.childList?.map((subChild, subChildIndex) => (
                                                                                                 <li key={subChildIndex}>
                                                                                                     <Link
                                                                                                         to={[menu.link, child.link, subChild.link].join('/')}>

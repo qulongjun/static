@@ -12,8 +12,34 @@ export default [
     method: 'get',
     response: () => {
       return {
+        code: 200,
+        msg: 'success',
         data: category,
       };
     },
-  }
+  },
+  {
+    url: '/api/category/:categoryId',
+    method: 'get',
+    response: (data: any) => {
+      const categoryId = data.query.categoryId;
+      return {
+        code: 200,
+        msg: 'success',
+        data: {
+          "label": "Leetcode专辑",
+          "link": "leetcode",
+          "type": "mega",
+          "children": {
+            "label": "基本",
+            "link": "fundamentals",
+            "children": {
+              "label": "数组",
+              "link": "array",
+            },
+          },
+        },
+      };
+    },
+  },
 ] as MockMethod[];

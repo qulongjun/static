@@ -1,21 +1,102 @@
 {
   "id": 1,
-  "cover": "assets/imgs/news/news-11.jpg",
-  "category": {
-    "label": "前端の乱炖",
-    "link": "food",
-    "id": 1
+  "cover": "/assets/imgs/news/news-11.jpg",
+  "category":  {
+    "label": "Leetcode专辑",
+    "link": "leetcode",
+    "type": "mega",
+    "children": {
+      "label": "基本",
+      "link": "fundamentals",
+      "children": {
+        "label": "数组",
+        "link": "array"
+      }
+    }
   },
   "title": "前后端分离演进：不能微服务，那就使用 BFF 隔离",
-  "content": "<p data-first-child=\"\" data-pid=\"YHGJ7HuT\">大部分同学都在 VSCode 中使用过 ESlint 和 prettier 去解决代码中的语法和格式化问题。但是很多同学并不了解这两个插件的具体区别，并且因为繁琐的可能带着冲突的配置，使得开发的体验并不太好。这篇文章将会介绍如何在 VSCode 中使用格式化插件的正确姿势</p><h3>ESlint</h3><p data-pid=\"vi4_C_e3\"><a href=\"https://link.zhihu.com/?target=https%3A//cn.eslint.org/\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\" data-za-detail-view-id=\"1043\">ESLint</a> 是一款语法检测工具。因为 JavaScript 本身是一门灵活的动态语言，一千个 JavaScriptor 就有一千种写法。为了方便人们的理解，快速上手别人的代码。一些大公司规定了代码编写的规则，ESlint 就是用于对这些人为制定的语法规则进行校验。那么哪些是语法规则呢？比如</p><div class=\"highlight\"><pre><code class=\"language-js\"><span class=\"c1\">// 禁用 process.env (no-process-env)\\n</span><span class=\"c1\">// 原因：此规则旨在阻止 process.env 的使用而避免全局依赖关系。因此，每当 process.env被使用时会给出警告。\\n</span><span class=\"c1\"></span>\\n<span class=\"c1\">// 错误示例\\n</span><span class=\"c1\"></span><span class=\"k\">if</span><span class=\"p\">(</span><span class=\"nx\">process</span><span class=\"p\">.</span><span class=\"nx\">env</span><span class=\"p\">.</span><span class=\"nx\">NODE_ENV</span> <span class=\"o\">===</span> <span class=\"s2\">\"development\"</span><span class=\"p\">)</span> <span class=\"p\">{</span>\\n    <span class=\"c1\">//...\\n</span><span class=\"c1\"></span><span class=\"p\">}</span>\\n<span class=\"c1\">// 正确示例\\n</span><span class=\"c1\"></span><span class=\"kd\">var</span> <span class=\"nx\">config</span> <span class=\"o\">=</span> <span class=\"nx\">require</span><span class=\"p\">(</span><span class=\"s2\">\"./config\"</span><span class=\"p\">);</span>\\n\\n<span class=\"k\">if</span><span class=\"p\">(</span><span class=\"nx\">config</span><span class=\"p\">.</span><span class=\"nx\">env</span> <span class=\"o\">===</span> <span class=\"s2\">\"development\"</span><span class=\"p\">)</span> <span class=\"p\">{</span>\\n    <span class=\"c1\">//...\\n</span><span class=\"c1\"></span><span class=\"p\">}</span>\\n</code></pre></div><p data-pid=\"6tOYONcs\">对于 JavaScript 来说，两种写法都是符合规范的，但是第二种更好，并且给出了原因。使用 ESlint 插件以后，就能在 VSCode 中进行友好的提示 更多的规则说明可以参考 <a href=\"https://link.zhihu.com/?target=https%3A//cn.eslint.org/docs/rules/\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\" data-za-detail-view-id=\"1043\">Rules</a></p><h3>prettier</h3><p data-pid=\"fAj4N0Fn\"><a href=\"https://link.zhihu.com/?target=https%3A//prettier.io/docs/en/index.html\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\" data-za-detail-view-id=\"1043\">prettier</a> 是一个代码格式化插件。它并不关心你的语法是否正确，只关心你的代码格式，比如是否使用单引号，语句结尾是否使用分号等等。</p><h3>项目中的配置</h3><p class=\"ztext-empty-paragraph\"><br></p><figure data-size=\"normal\"><noscript><img src=\"https://pic3.zhimg.com/v2-aa8962ae3e8842770d0596c602918a6a_b.jpg\" data-caption=\"\" data-size=\"normal\" data-rawwidth=\"1200\" data-rawheight=\"675\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic3.zhimg.com/v2-aa8962ae3e8842770d0596c602918a6a_r.jpg\"/></noscript><div><img src=\"https://pic3.zhimg.com/80/v2-aa8962ae3e8842770d0596c602918a6a_1440w.webp\" data-caption=\"\" data-size=\"normal\" data-rawwidth=\"1200\" data-rawheight=\"675\" class=\"origin_image zh-lightbox-thumb lazy\" width=\"1200\" data-original=\"https://pic3.zhimg.com/v2-aa8962ae3e8842770d0596c602918a6a_r.jpg\" data-actualsrc=\"https://pic3.zhimg.com/v2-aa8962ae3e8842770d0596c602918a6a_b.jpg\" height=\"675\" data-lazy-status=\"ok\"></div></figure><p data-pid=\"OzD3U7VZ\">一个项目要想正确使用格式化插件需要上两部分的配置，项目本身依赖的包以及 VSCode 中插件的支持。我们以一个 create-react-app 搭建的新项目为例。 </p><figure data-size=\"normal\"><noscript><img src=\"https://pic2.zhimg.com/v2-5c87e4b981c9ff2eb0f9b737b8dea7f9_b.jpg\" data-caption=\"\" data-size=\"normal\" data-rawwidth=\"1762\" data-rawheight=\"580\" class=\"origin_image zh-lightbox-thumb\" width=\"1762\" data-original=\"https://pic2.zhimg.com/v2-5c87e4b981c9ff2eb0f9b737b8dea7f9_r.jpg\"/></noscript><div><img src=\"https://pic2.zhimg.com/80/v2-5c87e4b981c9ff2eb0f9b737b8dea7f9_1440w.webp\" data-caption=\"\" data-size=\"normal\" data-rawwidth=\"1762\" data-rawheight=\"580\" class=\"origin_image zh-lightbox-thumb lazy\" width=\"1762\" data-original=\"https://pic2.zhimg.com/v2-5c87e4b981c9ff2eb0f9b737b8dea7f9_r.jpg\" data-actualsrc=\"https://pic2.zhimg.com/v2-5c87e4b981c9ff2eb0f9b737b8dea7f9_b.jpg\" height=\"580\" data-lazy-status=\"ok\"></div></figure><p data-pid=\"voJ3E6-p\">这个时候通过 <code>npm run start</code> 跑起来的开发环境就已经开启了 ESlint 的校验，错误的提示将会出现在终端中。预期是希望这些错误能够直接高亮在 VSCode 中，因此需要继续开启 VSCode 的插件</p><figure data-size=\"normal\"><noscript><img src=\"https://pic2.zhimg.com/v2-e3d610462935cce75f66daab62064015_b.jpg\" data-caption=\"\" data-size=\"normal\" data-rawwidth=\"642\" data-rawheight=\"864\" class=\"origin_image zh-lightbox-thumb\" width=\"642\" data-original=\"https://pic2.zhimg.com/v2-e3d610462935cce75f66daab62064015_r.jpg\"/></noscript><div><img src=\"https://pic2.zhimg.com/80/v2-e3d610462935cce75f66daab62064015_1440w.webp\" data-caption=\"\" data-size=\"normal\" data-rawwidth=\"642\" data-rawheight=\"864\" class=\"origin_image zh-lightbox-thumb lazy\" width=\"642\" data-original=\"https://pic2.zhimg.com/v2-e3d610462935cce75f66daab62064015_r.jpg\" data-actualsrc=\"https://pic2.zhimg.com/v2-e3d610462935cce75f66daab62064015_b.jpg\" height=\"864\" data-lazy-status=\"ok\"></div></figure><h3>深入 VSCode 配置</h3><p data-pid=\"ArOcKuNN\">大部分的同学开启了插件以后，VSCode 仍然没有高亮。因为需要对 VSCode 中的相关参数继续配置</p><p class=\"ztext-empty-paragraph\"><br></p><figure data-size=\"normal\"><noscript><img src=\"https://pic3.zhimg.com/v2-510cba74dc5ef0839bcaa1688e76a50a_b.jpg\" data-caption=\"\" data-size=\"normal\" data-rawwidth=\"1014\" data-rawheight=\"814\" class=\"origin_image zh-lightbox-thumb\" width=\"1014\" data-original=\"https://pic3.zhimg.com/v2-510cba74dc5ef0839bcaa1688e76a50a_r.jpg\"/></noscript><div><img src=\"https://pic3.zhimg.com/80/v2-510cba74dc5ef0839bcaa1688e76a50a_1440w.webp\" data-caption=\"\" data-size=\"normal\" data-rawwidth=\"1014\" data-rawheight=\"814\" class=\"origin_image zh-lightbox-thumb lazy\" width=\"1014\" data-original=\"https://pic3.zhimg.com/v2-510cba74dc5ef0839bcaa1688e76a50a_r.jpg\" data-actualsrc=\"https://pic3.zhimg.com/v2-510cba74dc5ef0839bcaa1688e76a50a_b.jpg\" height=\"814\" data-lazy-status=\"ok\"></div></figure><p data-pid=\"DWgrByde\"><code>eslint.probe</code>  这个规定 ESlint 插件需要校验的语言类型，添加上对应的语言后 VSCode 才会在代码编辑器中正确的高亮错误的语法，并且会在窗口中输出错误信息。如果开发 vue 的同学需要在这里添加上 <code>[\"html\", \"vue\"]</code> 这样才会在 <code>.vue</code> 单文件中开启 ESlint 检测，这两个选项需要 <code>eslint-plugin-vue</code> <code>eslint-plugin-html</code>两个包支持，需要安装到项目中。建议把这两个参数添加到 VSCode 中项目的工作区环境配置，否则在非 Vue 的项目中，ESlint 插件也会去查找这两个包，导致报错</p><p data-pid=\"KdXk6uuE\"><code>eslint.validate</code> 这个参数是老版本的定义校验的类型，逐步会被上面的替代</p><p data-pid=\"WuO3vaMO\"><code>editor.codeActionOnSave</code> 一些常见的语法问题 ESlint 提供一些修复方案。我们在保存代码时，VSCode 就会帮我们自动修复。过去这个选项是在插件自己单独开启的，新版的 VSCode 把保存后进行格式化统一收口。</p><h3>开启 prettier 格式化</h3><p data-pid=\"X1pw8qaD\">开启上面的选项后，VSCode 已经能正确的显示 ESlint 的报错信息，接下来要开启 prttier 的格式化。前面有说到，prettier 是一个校验代码格式化的工具，而 ESlint 的是校验语法的工具。一个项目维护两种配置可能有些麻烦，因此 ESlint 直接以插件的形式提供了支持</p><div class=\"highlight\"><pre><code class=\"language-json\"><span class=\"p\">{</span>\\n     <span class=\"nt\">\"eslintConfig\"</span><span class=\"p\">:</span> <span class=\"p\">{</span>\\n      <span class=\"nt\">\"extends\"</span><span class=\"p\">:</span> <span class=\"s2\">\"react-app\"</span><span class=\"p\">,</span>\\n      <span class=\"nt\">\"plugins\"</span><span class=\"p\">:</span> <span class=\"p\">[</span>\\n        <span class=\"s2\">\"prettier\"</span>\\n      <span class=\"p\">],</span>\\n      <span class=\"nt\">\"rules\"</span><span class=\"p\">:</span> <span class=\"p\">{</span>\\n        <span class=\"nt\">\"prettier/prettier\"</span><span class=\"p\">:</span> <span class=\"s2\">\"error\"</span>\\n      <span class=\"p\">}</span>\\n    <span class=\"p\">},</span>\\n<span class=\"p\">}</span></code></pre></div><p data-pid=\"9OBNK9Gr\"><code>package.json</code> 中直接添加插件 prettier, 规则中定义 prettier 的校验等级，这里直接设置为 error。这样 ESlint 的窗口也会直接输出 prettier 的报错信息。为了自动格式化 prettier 的错误也需要添加相应的规则。这里我单独设置了 prettier 的规则文件</p><div class=\"highlight\"><pre><code class=\"language-yaml\"><span class=\"l\">// .prettierrc.yaml</span><span class=\"w\">\\n</span><span class=\"w\"></span><span class=\"nt\">semi</span><span class=\"p\">:</span><span class=\"w\"> </span><span class=\"kc\">false</span><span class=\"w\">\\n</span><span class=\"w\"></span><span class=\"nt\">singleQuote</span><span class=\"p\">:</span><span class=\"w\"> </span><span class=\"kc\">true</span><span class=\"w\">\\n</span><span class=\"w\"></span><span class=\"nt\">proseWrap</span><span class=\"p\">:</span><span class=\"w\"> </span><span class=\"s2\">\"preserve\"</span><span class=\"w\">\\n</span><span class=\"w\"></span><span class=\"nt\">tabWidth</span><span class=\"p\">:</span><span class=\"w\"> </span><span class=\"m\">2</span></code></pre></div><p data-pid=\"maVMsGyx\">ESlint 集成了 prettier 的校验规则，因此 VSCode 中不需要再单独安装 prettier  插件</p><p data-pid=\"SmdJsrSK\">完成以上的配置后，VSCode 就能正确的展示 ESlint 和 prettier 的错误提示</p><h3>总结</h3><p data-pid=\"mlLeImnM\">要想在 VSCode 中开启代码的校验和格式化，主要包含两个部分。一个是项目自身的依赖包，ESlint 和各种相关插件。并且在 webpack 的 preloader 中开启校验( React 项目的模板中已经集成了这一步)，完成以后将在开发环境中的终端窗口提示。 要完成在 VSCode 中的提示还需要安装 ESlint 插件，并且设置完相关配置才能正确展示</p>",
+  "content": "<h2 id=\"section1\">一、关于 <i class=\"serif\">Typo.css</i></h2>\n\n<p><i class=\"serif\">Typo.css</i> 的目的是，在一致化浏览器排版效果的同时，构建最适合中文阅读的网页排版。</p>\n<h4>现状和如何去做：</h4>\n\n<p class=\"typo-first\">排版是一个麻烦的问题 <sup><a href=\"#appendix1\"># 附录一</a></sup>，需要精心设计，而这个设计却是常被视觉设计师所忽略的。前端工程师更常看到这样的问题，但不便变更。因为在多个 OS 中的不同浏览器渲染不同，改动需要多的时间做回归测试，所以改变变得更困难。而像我们一般使用的\n  Yahoo、Eric Meyer 和 Alice base.css 中采用的 Reset 都没有很好地考虑中文排版。<i class=\"serif\">Typo.css</i> 要做的就是解决中文排版的问题。</p>",
   "author": "BARBARA CARTLAND",
   "date": "刚刚",
   "readTime": "11",
   "desc": "Proin vitae placerat quam. Ut sodales eleifend urna, in condimentum tortor ultricies eu. Nunc auctor iaculis dolorProin vitae placerat quam. Proin vitae placerat quam.",
   "views": "3k",
-  "tags": ["Deer", "Nature", "Conserve"],
-  "comments": "182",
+  "tags": [
+    {
+      "id": 1,
+      "link": "deer",
+      "label": "Deer"
+    },
+    {
+      "id": 2,
+      "link": "natural",
+      "label": "Natural"
+    },
+    {
+      "id": 3,
+      "link": "sturdent",
+      "label": "Student"
+    }
+  ],
   "likes": "268",
   "rating": "9",
-  "totalPost": "25"
+  "totalPost": "25",
+  "comments": [
+    {
+      "id": 1,
+      "content": "思考是一种能力，需要不断练习才能提升。然而，走捷径总是更简单。喜欢大而化之，喜欢立竿见影，喜欢流于表面的现象，喜欢一看可知的结论，这样的“认知取向”之下，对思辨性、专业性强的内容",
+      "name": "张三",
+      "date": "8分钟前",
+      "replyId": null,
+      "avatar": "/assets/imgs/authors/author.jpg"
+    },
+    {
+      "id": 2,
+      "content": "思考是一种能力，需要不断练习才能提升。然而，走捷径总是更简单。喜欢大而化之，喜欢立竿见影，喜欢流于表面的现象，喜欢一看可知的结论，这样的“认知取向”之下，对思辨性、专业性强的内容",
+      "name": "李四",
+      "date": "3天前",
+      "replyId": null,
+      "avatar": "/assets/imgs/authors/author-2.jpg"
+    },
+    {
+      "id": 3,
+      "content": "思考是一种能力，需要不断练习才能提升。然而，走捷径总是更简单。喜欢大而化之，喜欢立竿见影，喜欢流于表面的现象，喜欢一看可知的结论，这样的“认知取向”之下，对思辨性、专业性强的内容",
+      "name": "王五",
+      "date": "刚刚",
+      "replyId": 1,
+      "avatar": "/assets/imgs/authors/author-3.jpg"
+    },
+    {
+      "id": 4,
+      "content": "思考是一种能力，需要不断练习才能提升。然而，走捷径总是更简单。喜欢大而化之，喜欢立竿见影，喜欢流于表面的现象，喜欢一看可知的结论，这样的“认知取向”之下，对思辨性、专业性强的内容",
+      "name": "赵六",
+      "date": "5小时前",
+      "replyId": 2,
+      "avatar": "/assets/imgs/authors/author-4.jpg"
+    },
+    {
+      "id": 5,
+      "content": "思考是一种能力，需要不断练习才能提升。然而，走捷径总是更简单。喜欢大而化之，喜欢立竿见影，喜欢流于表面的现象，喜欢一看可知的结论，这样的“认知取向”之下，对思辨性、专业性强的内容",
+      "name": "求其",
+      "date": "27 August",
+      "replyId": 3,
+      "avatar": "/assets/imgs/authors/author-2.jpg"
+    },
+    {
+      "id": 6,
+      "content": "思考是一种能力，需要不断练习才能提升。然而，走捷径总是更简单。喜欢大而化之，喜欢立竿见影，喜欢流于表面的现象，喜欢一看可知的结论，这样的“认知取向”之下，对思辨性、专业性强的内容",
+      "name": "俊俏",
+      "date": "八分钟前",
+      "replyId": 5,
+      "avatar": "/assets/imgs/authors/author.jpg"
+    },
+    {
+      "id": 7,
+      "content": "思考是一种能力，需要不断练习才能提升。然而，走捷径总是更简单。喜欢大而化之，喜欢立竿见影，喜欢流于表面的现象，喜欢一看可知的结论，这样的“认知取向”之下，对思辨性、专业性强的内容",
+      "name": "俊俏",
+      "date": "八分钟前",
+      "replyId": 6,
+      "avatar": "/assets/imgs/authors/author.jpg"
+    }
+  ]
 }

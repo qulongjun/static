@@ -11,8 +11,8 @@ export interface ICategory {
   label: string;
   /* 分类链接 */
   link: string;
-  /* 文章数量 */
-  articleCount?: number;
+  /* 子分类 */
+  children?: ICategory;
 }
 
 export interface ICategoryConfig {

@@ -9,6 +9,7 @@ import Slider from 'react-slick';
 import { get } from '../../../utils/request';
 import { IArticle } from '../../../interfaces/article';
 import {getArticleUrl, getCategoryUrl} from '../../../utils/url';
+import Breadcrumb from "../../../components/breadCrumb";
 
 const VerticalCarousel: React.FC = () => {
   const [nav1, setNav1] = useState<Slider | null>(null);
@@ -39,9 +40,7 @@ const VerticalCarousel: React.FC = () => {
                     <div className="post-content-overlay">
                       <div className="container">
                         <div className="entry-meta meta-0 font-small mb-20">
-                          <Link to={`${getCategoryUrl(article.category.link)}`}>
-                            <span className="post-cat text-info">{article.category.label}</span>
-                          </Link>
+                          <Breadcrumb article={article} />
                         </div>
                         <h1 className="post-title mb-20 font-weight-900 text-white">
                           <Link to={getArticleUrl(article.id)}>{article.title}</Link>
@@ -83,6 +82,7 @@ const VerticalCarousel: React.FC = () => {
                       <div className="entry-meta meta-1 float-left font-x-small text-uppercase">
                         <span className="post-on text-white">{article.date}</span>
                         <span className="post-by has-dot text-white">{article.views} 阅读</span>
+                        <span className="comment-count has-dot text-white">{article.commentCount} 评论</span>
                       </div>
                     </div>
                   </div>

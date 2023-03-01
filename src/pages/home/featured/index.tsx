@@ -11,6 +11,7 @@ import Carousel from './carousel';
 import {IFeaturedConfig} from "../../../interfaces/article";
 import {getArticleUrl, getCategoryUrl, getTagUrl} from '../../../utils/url';
 import Share from '../../../components/share';
+import Breadcrumb from "../../../components/breadCrumb";
 
 const Featured: React.FC = () => {
     const [hotTags, setHotTags] = useState<ITag[]>([]);
@@ -74,11 +75,7 @@ const Featured: React.FC = () => {
                                 </div>
                                 <div className="post-content p-30">
                                     <div className="entry-meta meta-0 font-small mb-10">
-                                        <Link to={getCategoryUrl(article.category.link)}>
-                                            <span className="post-cat text-info">
-                                                {article.category.label}
-                                            -</span>
-                                        </Link>
+                                        <Breadcrumb article={article} />
                                     </div>
                                     <div className="d-flex post-card-content">
                                         <h5 className="post-title mb-20 font-weight-900">
@@ -88,6 +85,7 @@ const Featured: React.FC = () => {
                                             <span className="post-on">{article.date}</span>
                                             <span className="time-reading has-dot">{article.likes} 赞</span>
                                             <span className="post-by has-dot">{article.views} 阅读</span>
+                                            <span className="comment-count has-dot">{article.commentCount} 评论</span>
                                         </div>
                                     </div>
                                 </div>

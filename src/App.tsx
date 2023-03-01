@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Route, Routes } from "react-router-dom";
+import { useScrollTo } from 'use-scroll-to-2';
+import { Toaster } from 'react-hot-toast';
 import Layout from './components/layout';
 import Header from './components/header';
 import Search from './components/search';
@@ -10,11 +12,17 @@ import { IAuthor } from './interfaces/author';
 import Home from './pages/home';
 import NotFound from "./pages/notFound";
 import Article from "./pages/article";
+import Sub from "./pages/sub";
+import BackToTop from "./components/backToTop";
+
 
 function App() {
   const [searchModal, setSearchModal] = useState<boolean>(false);
   const [sideBarModal, setSideBarModal] = useState<boolean>(false);
   const [author, setAuthor] = useState<IAuthor | null>(null);
+  const [ref, scroll] = useScrollTo({
+    offsetTop: 100,
+  });
   /* 开关模态窗 */
   const onToggleSearch = useCallback(() => setSearchModal(!searchModal), [searchModal]);
 
@@ -31,7 +39,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div ref={ref as any}>
       <Layout>
         {/* 侧边栏 SideBar */}
         <SideBar visible={sideBarModal} onToggleSideBar={onToggleSideBar} />
@@ -41,15 +49,21 @@ function App() {
         <Search visible={searchModal} />
 
         <Routes>
-          <Route path="/article/:id" element={<Article author={author} />} />
+          <Route path="/article/:id" element={<Article author={author} scroll2Top={scroll} />} />
+          <Route path="/tag/:tagId" element={<Sub author={author} scroll2Top={scroll} />} />
+          <Route path="/:menu" element={<Sub author={author} scroll2Top={scroll} />} />
+          <Route path="/:menu/:subMenu" element={<Sub author={author} scroll2Top={scroll} />} />
+          <Route path="/:menu/:subMenu/:grandSubMenu" element={<Sub author={author} scroll2Top={scroll} />} />
           <Route path="/" element={<Home author={author} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
         {/* 页脚 Footer */}
         <Footer />
+        <Toaster />
+        <BackToTop />
       </Layout>
-    </>
+    </div>
   )
 }
 

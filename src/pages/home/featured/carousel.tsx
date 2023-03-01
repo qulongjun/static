@@ -8,6 +8,7 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import {getArticleUrl, getCategoryUrl} from '../../../utils/url';
 import { IArticle } from '../../../interfaces/article';
+import Breadcrumb from "../../../components/breadCrumb";
 
 interface IPostCarousel {
   articles: IArticle[] | null;
@@ -36,14 +37,9 @@ const Carousel: React.FC<IPostCarousel> = (props) => {
                 className="thumb-overlay img-hover-slide position-relative"
                 style={{ backgroundImage: `url(${item.cover})` }}
               >
-                <span className="top-left-icon bg-warning">
-                  <i className="elegant-icon icon_star_alt" />
-                </span>
                 <div className="post-content-overlay text-white ml-30 mr-30 pb-30">
                   <div className="entry-meta meta-0 font-small mb-20">
-                    <Link to={getCategoryUrl(item.category.link)}>
-                      <span className="post-cat text-info">{item.category.label}</span>
-                    </Link>
+                    <Breadcrumb article={item} />
                   </div>
                   <h3 className="post-title font-weight-900 mb-20">
                     <Link to={getArticleUrl(item.id)}>{item.title}</Link>
@@ -52,6 +48,7 @@ const Carousel: React.FC<IPostCarousel> = (props) => {
                     <span className="post-on">{item.date}</span>
                     <span className="time-reading has-dot">{item.likes} 赞</span>
                     <span className="hit-count has-dot">{item.views} 阅读</span>
+                    <span className="comment-count has-dot">{item.commentCount} 评论</span>
                   </div>
                 </div>
               </div>

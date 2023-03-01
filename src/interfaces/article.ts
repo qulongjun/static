@@ -7,6 +7,21 @@ import { ICategory } from "./category";
 import { IAuthor } from "./author";
 import { ITag } from "./tag";
 
+export interface IComment {
+  /* 评论ID */
+  id: number;
+  /* 评论内容 */
+  content: string;
+  /* 评论名称 */
+  name?: string;
+  /* 评论时间 */
+  date: string;
+  /* 回复ID */
+  replyId: number;
+  /* 头像 */
+  avatar: string;
+}
+
 export interface IArticle {
   /* 主题ID */
   id: number;
@@ -28,14 +43,16 @@ export interface IArticle {
   views?: number;
   /* 主题标签 */
   tags?: ITag[];
-  /* 主题评论数 */
-  comments?: number;
   /* 主题点赞数 */
   likes?: number;
   /* 主题评分 */
   rating?: number;
-  /* 阅读耗时 */
-  readTime?: number;
+  /* 主题评论数 */
+  commentCount?: number;
+  /* 主题评论 */
+  comments: IComment[];
+  /* 相关主题 */
+  related: IArticle[];
 }
 
 export interface IFeaturedConfig {
@@ -55,4 +72,11 @@ export interface IRecently {
 export interface IPopularConfig {
   /* 主题列表 */
   list: IArticle[];
+}
+
+/* 发表评论实体 */
+export interface ISendComment {
+  content: string;
+  nickName?: string;
+  email?: string;
 }

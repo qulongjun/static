@@ -12,6 +12,8 @@ export default [
     method: 'get',
     response: () => {
       return {
+        code: 200,
+        msg: 'success',
         data: list,
       };
     },

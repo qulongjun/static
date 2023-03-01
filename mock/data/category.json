@@ -2,38 +2,38 @@
   "list": [
     {
       "id": 1,
-      "label": "文章分类 - 1",
-      "link": "category_1",
+      "label": "食物分享",
+      "link": "food",
       "articleCount": 20
     },
     {
       "id": 2,
-      "label": "文章分类 - 2",
-      "link": "category_2",
+      "label": "生活中的小确幸",
+      "link": "love",
       "articleCount": 20
     },
     {
       "id": 3,
-      "label": "文章分类 - 3",
-      "link": "category_3",
+      "label": "爱与希望",
+      "link": "hope",
       "articleCount": 20
     },
     {
       "id": 4,
-      "label": "文章分类 - 4",
-      "link": "category_4",
+      "label": "生存还是死亡",
+      "link": "death",
       "articleCount": 20
     },
     {
       "id": 5,
-      "label": "文章分类 - 5",
-      "link": "category_5",
+      "label": "前端的未来",
+      "link": "feature",
       "articleCount": 20
     },
     {
       "id": 6,
-      "label": "文章分类 - 6",
-      "link": "category_6",
+      "label": "测试分类",
+      "link": "test",
       "articleCount": 20
     }
   ]

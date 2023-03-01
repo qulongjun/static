@@ -5,7 +5,7 @@
  */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
-import {getArticleUrl} from "../../../utils/url";
+import { getArticleUrl, getCategoryUrl } from "../../../utils/url";
 import {get} from "../../../utils/request";
 import {IArticle, IPopularConfig} from "../../../interfaces/article";
 import Widget from "../../../components/widget";

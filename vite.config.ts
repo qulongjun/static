@@ -12,11 +12,6 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         localEnabled: command === 'serve',
         logger: true,
       }),
-    ],
-    resolve: {
-      alias: {
-        '@': '/src'
-      }
-    }
+    ]
   }
 }

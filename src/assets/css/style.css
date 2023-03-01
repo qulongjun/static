@@ -473,11 +473,13 @@ blockquote ol:last-child{margin-bottom:0;}
 .comments-area .thumb img{width:70px;border-radius:50%;}
 .comments-area .date{font-size:14px;color:#999999;margin-bottom:0;margin-left:20px;}
 .comments-area .comment{margin-bottom:10px;color:#777777;font-size:15px;}
-.comments-area .btn-reply{background-color:transparent;color:#888888;font-size:14px;display:block;font-weight:400;border-bottom:1px solid rgb(225,225,225);font-style:italic;}
+.comments-area .btn-reply{cursor:pointer;background-color:transparent;color:#888888;font-size:14px;display:block;font-weight:400;border-bottom:1px solid rgb(225,225,225);font-style:italic;}
 .comment-form{padding-top:45px;margin-top:50px;margin-bottom:20px;}
 .comment-form .form-group{margin-bottom:30px;}
 .comment-form h4{margin-bottom:40px;font-size:18px;line-height:22px;color:#2a2a2a;}
 .comment-form .name{padding-left:0px;}
+.comment-form .btn-reply-remove {width: 80px;margin-bottom: 1.2em;}
+.comment-form .btn-reply-remove a {cursor: pointer;font-size: 14px; border-bottom: 1px solid rgb(225,225,225);font-style: italic;font-weight: 400;background-color: transparent;text-decoration: none;}
 .form-control{border:1px solid rgb(225,225,225);border-radius:30px;height:48px;padding-left:18px;font-size:14px;background:transparent;background: #fff}
 textarea.form-control {border-radius: 10px}
 .form-control:focus{outline:0;box-shadow:none;}

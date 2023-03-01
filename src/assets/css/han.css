@@ -1,0 +1,284 @@
+@charset "utf-8";
+
+#write {
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+body {
+  font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans, serif;
+}
+
+figcaption {
+  text-align: center;
+}
+
+/* 块/段落引用 */
+
+#write blockquote {
+  position: relative;
+  color: #999;
+  font-weight: 400;
+  border-left: 1px solid #1abc9c;
+  padding-left: 1em;
+  margin: 1em 3em 1em 2em;
+}
+
+#write blockquote::before {
+  background: none !important;
+}
+
+@media only screen and ( max-width: 640px ) {
+  #write blockquote {
+    margin: 1em 0;
+  }
+}
+
+#write a {
+  color: #1abc9c;
+  border-bottom: 1px solid #1abc9c;
+}
+
+#write a:hover {
+  border-bottom-color: #555;
+  color: #555;
+  text-decoration: none;
+}
+
+
+/* 标记，类似于手写的荧光笔的作用 */
+mark {
+  //background: #fffdd1;
+  border-bottom: 1px solid #ffedce;
+  padding: 2px;
+  margin: 0 5px;
+}
+
+/* 代码片断 */
+pre, code, pre tt {
+  font-family: Courier, 'Courier New', monospace;
+}
+
+#write .md-fences {
+  border: 1px solid #ddd;
+  padding: 1em 0.5em;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 一致化 horizontal rule */
+hr {
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 0.8em;
+  height: 10px;
+}
+
+#write strong {
+  font-weight: bolder;
+  color: #000;
+}
+
+.code-tooltip.md-hover-tip strong {
+  color: white;
+}
+
+/* 保证块/段落之间的空白隔行 */
+#write p, #write .md-fences, #write ul, #write ol, #write dl, #write form, #write hr, #write figure,
+#write-p, #write-pre, #write-ul, #write-ol, #write-dl, #write-form, #write-hr, #write-table, blockquote {
+  margin-bottom: 1.2em;
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+
+html {
+  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+}
+
+#write b {
+  color: #000;
+}
+
+/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6,
+#write-h1, #write-h2, #write-h3, #write-h4, #write-h5, #write-h6 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
+  color: #000;
+  font-weight: 100;
+}
+
+#write h1, #write-h1 {
+  font-size: 2.4em;
+  padding-bottom: 1em;
+  border-bottom: 3px double #eee;
+}
+
+#write h2, #write-h2 {
+  font-size: 1.8em;
+}
+
+#write h3, #write-h3 {
+  font-size: 1.6em;
+}
+
+#write h4, #write-h4 {
+  font-size: 1.4em;
+}
+
+#write h5, #write h6, #write-h5, #write-h6 {
+  font-size: 1.2em;
+}
+
+/* 在文章中，应该还原 ul 和 ol 的样式 */
+#write ul, #write-ul {
+  margin-left: 1.3em;
+  list-style: disc;
+}
+
+#write ol, #write-ol {
+  list-style: decimal;
+  margin-left: 1.9em;
+}
+
+#write li ul, #write li ol, #write-ul ul, #write-ul ol, #write-ol ul, #write-ol ol {
+  margin-bottom: 0.8em;
+  margin-left: 2em;
+}
+
+#write li ul, #write-ul ul, #write-ol ul {
+  list-style: circle;
+}
+
+
+#write table th, #write table td {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+  color: #666;
+}
+
+#write table .md-table-edit th {
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+#write table th, #write-table th {
+  background: #fbfbfb;
+}
+
+#write table thead th, #write-table thead th {
+  background: #f1f1f1;
+}
+
+#write table caption {
+  border-bottom: none;
+}
+
+#write em {
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+li > p {
+  margin-bottom: 0 !important;
+}
+
+/* Responsive images */
+#write img {
+  max-width: 100%;
+}
+
+a.md-toc-inner {
+  border-bottom: 0 !important;
+}
+
+.md-toc-h1:first-of-type:last-of-type {
+  display: none;
+}
+
+.md-toc {
+  font-size: inherit;
+}
+
+.md-toc-h1 .md-toc-inner {
+  font-weight: normal;
+}
+
+.md-table-edit th {
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.mac-seamless-mode #write {
+  min-height: calc(100vh - 6em - 20px);
+}
+
+.typora-quick-open-item.active {
+  color: var(--active-file-text-color);
+}
+
+
+.btn-primary {
+  background-color: #2d2d2d;
+  border-color: #020202;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background-color: #4e4c4e;
+  border: #4e4c4e;
+}
+
+#preference-dialog .modal-content {
+  background: #6e757a;
+  --bg-color: #6e757a;
+  --text-color: #f1f1f1;
+  color: #f1f1f1;
+}
+
+#typora-source,
+.typora-sourceview-on {
+  --bg-color: #eee;
+  background: #eee;
+}
+
+.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
+  color: #116098;
+}
+
+.cm-s-typora-default .cm-link {
+  color: #11987d;
+}
+
+.cm-s-typora-default .cm-em {
+  font-family: Georgia-Italic, STSongti-SC-Light, serif;
+  color: #6f6400;
+}
+
+.cm-s-typora-default .cm-em {
+  color: rgb(0, 22, 45);
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+  border-left: 3px solid #6e757a;
+}
+
+.cm-s-typora-default .CodeMirror-selectedtext,
+.typora-sourceview-on .CodeMirror-focused .CodeMirror-selected {
+  background: #6e757a;
+  color: white;
+}
+
+.file-node-icon.fa.fa-folder:before {
+  color: rgba(32, 43, 51, 0.49);
+}
+
+#preference-dialog .megamenu-menu-panel h1 {
+  margin-bottom: 1em;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+  background: transparent;
+}

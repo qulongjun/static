@@ -15,11 +15,11 @@
       "label": "Leetcode专辑",
       "link": "leetcode",
       "type": "mega",
-      "children": [
+      "childList": [
         {
           "label": "基本",
           "link": "fundamentals",
-          "children": [
+          "childList": [
             {
               "label": "数组",
               "link": "array"
@@ -65,7 +65,7 @@
         {
           "label": "算法",
           "link": "algorithms",
-          "children": [
+          "childList": [
             {
               "label": "动态规划",
               "link": "dynamic-programming"
@@ -115,7 +115,7 @@
         {
           "label": "基础数据结构",
           "link": "common-data-structures",
-          "children": [
+          "childList": [
             {
               "label": "哈希表",
               "link": "hash-table"
@@ -197,7 +197,7 @@
         {
           "label": "高级数据结构",
           "link": "advanced-data-structures",
-          "children": [
+          "childList": [
             {
               "label": "并查集",
               "link": "union-find"
@@ -223,7 +223,7 @@
         {
           "label": "技巧",
           "link": "techniques",
-          "children": [
+          "childList": [
             {
               "label": "双指针",
               "link": "two-pointers"
@@ -265,7 +265,7 @@
         {
           "label": "数学",
           "link": "math",
-          "children": [
+          "childList": [
             {
               "label": "数学",
               "link": "math"
@@ -307,7 +307,7 @@
         {
           "label": "其他",
           "link": "other",
-          "children": [
+          "childList": [
             {
               "label": "数据库",
               "link": "database"
@@ -377,7 +377,7 @@
     {
       "label": "Leetcode专辑",
       "link": "leetcode",
-      "children": [
+      "childList": [
         {
           "label": "基本",
           "link": "fundamentals"

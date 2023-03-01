@@ -40,7 +40,7 @@ axios.interceptors.request.use(
 // 响应拦截器
 axios.interceptors.response.use(
   response => {
-    if ( response.status === 200 ) {
+    if ( response.status === 200 && response.data.code === 200 ) {
       return Promise.resolve(response.data);
     }
     else {

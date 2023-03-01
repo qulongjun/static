@@ -31,7 +31,6 @@ const Category: React.FC = () => {
                         Array.isArray(category) && category.map(item => (
                             <li className="cat-item cat-item-2" key={item.id}>
                                 <Link to={getCategoryUrl(item.link)}>{item.label}</Link>
-                                <span className="post-count">{item.articleCount}</span>
                             </li>
                         ))
                     }

@@ -27,10 +27,10 @@ const Author: React.FC<Props> = (props) => {
                 <strong>关注我: &nbsp;</strong>
                 <ul className="header-social-network d-inline-block list-inline color-white mb-20">
                     <li className="list-inline-item">
-                        <Link to="/#" target="_blank" className="github" title="关注 Github"><GithubOutlined/></Link>
+                        <a href="https://github.com/qulongjun" target="_blank" className="github" title="关注 Github"><GithubOutlined/></a>
                     </li>
                     <li className="list-inline-item">
-                        <Link to="/#" target="_blank" className="zh" title="关注 知乎专栏"><ZhihuOutlined/></Link>
+                        <a href="https://www.zhihu.com/column/buran" target="_blank" className="zh" title="关注 知乎专栏"><ZhihuOutlined/></a>
                     </li>
                 </ul>
             </>

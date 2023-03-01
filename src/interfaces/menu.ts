@@ -10,13 +10,13 @@ export type MenuType = 'sub' | 'mega' | 'common';
 interface IBaseMenuConfig {
   label: React.ReactNode;
   link: string;
-  children?: IBaseMenuConfig[];
+  childList?: IBaseMenuConfig[];
 }
 
 export interface IMenuConfig extends IBaseMenuConfig {
   icon?: string;
   type: MenuType;
-  children: IBaseMenuConfig[]
+  childList: IBaseMenuConfig[]
 }
 
 export interface INavConfig extends IBaseMenuConfig {}
