@@ -5,11 +5,11 @@
  */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
-import {get} from '../../../utils/request';
-import {ITag, ITagConfig} from '../../../interfaces/tag';
+import { post } from '../../../utils/request';
+import {ITag} from '../../../interfaces/tag';
 import Carousel from './carousel';
 import {IFeaturedConfig} from "../../../interfaces/article";
-import {getArticleUrl, getCategoryUrl, getTagUrl} from '../../../utils/url';
+import {getArticleUrl, getTagUrl} from '../../../utils/url';
 import Share from '../../../components/share';
 import Breadcrumb from "../../../components/breadCrumb";
 
@@ -18,12 +18,12 @@ const Featured: React.FC = () => {
     const [featured, setFeatured] = useState<IFeaturedConfig | null>(null);
 
     const fetchTag = useCallback(async () => {
-        const hotTags = await get('tag/hot') as ITagConfig;
-        setHotTags(hotTags.list);
+        const hotTags = await post('tag/hot') as ITag[];
+        setHotTags(hotTags);
     }, []);
 
     const fetchFeaturedArticle = useCallback(async () => {
-        const articles = await get('article/featured') as IFeaturedConfig;
+        const articles = await post('article/featured') as IFeaturedConfig;
         setFeatured(articles);
     }, []);
 

@@ -6,7 +6,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import { get } from '../../../utils/request';
+import { post } from '../../../utils/request';
 import { IArticle } from '../../../interfaces/article';
 import {getArticleUrl, getCategoryUrl} from '../../../utils/url';
 import Breadcrumb from "../../../components/breadCrumb";
@@ -17,7 +17,7 @@ const VerticalCarousel: React.FC = () => {
   const [articles, setArticles] = useState<IArticle[]>([]);
 
   const fetchTop = useCallback(async () => {
-    const articles = await get('/article/top') as IArticle[];
+    const articles = await post('/article/top') as IArticle[];
     setArticles(articles);
   }, []);
 

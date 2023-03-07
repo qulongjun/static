@@ -1,6 +1,6 @@
 /**
  * @File
- * @Author author@static.vip(瞿龙俊)
+ * @Author author@static.vip
  * @Date 2023/2/28 20:11:25
  */
 import React from 'react';
@@ -12,11 +12,10 @@ interface IBreadcrumb {
   article: IArticle;
 }
 
-const Breadcrumb: React.FC<IBreadcrumb> = ({ article }) => {
-
-  return <>
+const Breadcrumb: React.FC<IBreadcrumb> = ({ article }) => (
+  <>
     <Link to={getCategoryUrl(article.category.link ?? '')}>
-      <span className="post-cat position-relative text-primary">{article.category.label}</span>
+      <span className="post-cat position-relative text-info">{article.category.label}</span>
     </Link>
     {
       article.category.children?.link && (
@@ -33,7 +32,7 @@ const Breadcrumb: React.FC<IBreadcrumb> = ({ article }) => {
         </Link>
       )
     }
-  </>;
-};
+  </>
+);
 
 export default Breadcrumb;

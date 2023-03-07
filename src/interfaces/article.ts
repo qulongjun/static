@@ -20,6 +20,10 @@ export interface IComment {
   replyId: number;
   /* 头像 */
   avatar: string;
+  /* 邮箱 */
+  email?: string;
+  /* 用户ID */
+  userId?: string;
 }
 
 export interface IArticle {
@@ -37,12 +41,14 @@ export interface IArticle {
   author: IAuthor;
   /* 主题更新日期 */
   date: string;
+  /* 主题真实日期 */
+  realDate: string;
   /* 主题描述 */
   desc?: string;
   /* 主题阅读量 */
   views?: number;
   /* 主题标签 */
-  tags?: ITag[];
+  tag?: ITag[];
   /* 主题点赞数 */
   likes?: number;
   /* 主题评分 */

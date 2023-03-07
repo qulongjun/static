@@ -4,17 +4,18 @@ import { useScrollTo } from 'use-scroll-to-2';
 import { Toaster } from 'react-hot-toast';
 import Layout from './components/layout';
 import Header from './components/header';
-import Search from './components/search';
 import SideBar from './components/sidebar';
-import Footer from "./components/footer";
-import { get } from "./utils/request";
+import Footer from './components/footer';
+import Search from './components/search';
+import BackToTop from './components/backToTop';
+import { get } from './utils/request';
 import { IAuthor } from './interfaces/author';
 import Home from './pages/home';
 import NotFound from "./pages/notFound";
-import Article from "./pages/article";
+import Article from './pages/article';
 import Sub from "./pages/sub";
-import BackToTop from "./components/backToTop";
-
+import SearchPage from './pages/search';
+import Contact from "./pages/contact";
 
 function App() {
   const [searchModal, setSearchModal] = useState<boolean>(false);
@@ -25,6 +26,8 @@ function App() {
   });
   /* 开关模态窗 */
   const onToggleSearch = useCallback(() => setSearchModal(!searchModal), [searchModal]);
+
+  const onCloseSearch  = useCallback(() => setSearchModal(false), []);
 
   /* 开关侧边栏 */
   const onToggleSideBar = useCallback(() => setSideBarModal(!sideBarModal), [sideBarModal]);
@@ -46,10 +49,13 @@ function App() {
         {/* 导航栏 Header */}
         <Header onToggleSearch={onToggleSearch} />
         {/* 搜索框 Search */}
-        <Search visible={searchModal} />
+        <Search visible={searchModal} onClose={onCloseSearch} />
 
         <Routes>
+          <Route path="/404" element={<NotFound />} />
+          <Route path="/contact" element={<Contact author={author} />} />
           <Route path="/article/:id" element={<Article author={author} scroll2Top={scroll} />} />
+          <Route path="/search/:key" element={<SearchPage author={author} scroll2Top={scroll} />} />
           <Route path="/tag/:tagId" element={<Sub author={author} scroll2Top={scroll} />} />
           <Route path="/:menu" element={<Sub author={author} scroll2Top={scroll} />} />
           <Route path="/:menu/:subMenu" element={<Sub author={author} scroll2Top={scroll} />} />

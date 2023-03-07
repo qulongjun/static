@@ -3,8 +3,9 @@
  * @Author author@static.vip
  * @Date 2023/2/27 17:28:24
  */
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { nanoid } from 'nanoid';
 import { IArticle, IComment } from '../../../interfaces/article';
 import { post } from '../../../utils/request';
 
@@ -12,17 +13,39 @@ interface IReply {
   /* 文章详情 */
   article?: IArticle;
   /* 更新文章 */
-  fetchArticle: () => void;
+  fetchComment: () => void;
   /* 回复评论 */
   replyComment: IComment | null;
   /* 设置回复评论 */
   setReplyComment: (comment: IComment | null) => void;
 }
 
-const Reply: React.FC<IReply> = ({ replyComment, setReplyComment, article, fetchArticle }) => {
+const Reply: React.FC<IReply> = ({ replyComment, setReplyComment, article, fetchComment }) => {
   const [nickName, setNickName] = useState<string>('');
   const [email, setEMail] = useState<string>('');
   const [content, setContent] = useState<string>('');
+  const [userInfo, setUserInfo] = useState<IComment | null>(null);
+
+  const getUserInfo = useCallback(async () => {
+    const userId = localStorage.getItem('userId');
+    if ( userId ) {
+      const result = await post(`/comment/userId/${userId}`) as IComment;
+      if ( result.id ) {
+        setUserInfo(result);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
+
+  useEffect(() => {
+    if ( userInfo ) {
+      setEMail(userInfo.email ?? '');
+      setNickName(userInfo.name ?? '');
+    }
+  }, [userInfo]);
 
   // 发表评论
   const onComment = useCallback(() => {
@@ -36,17 +59,23 @@ const Reply: React.FC<IReply> = ({ replyComment, setReplyComment, article, fetch
       return;
     }
 
-    post('/comment', {
+    const userId = userInfo !== null ? userInfo.userId : nanoid();
+
+    post('/comment/create', {
       articleId: article?.id,
-      replyId: replyComment?.id,
+      parentId: replyComment?.id,
       content,
       email,
-      nickName,
+      name: nickName,
+      userId,
     }).then(() => {
       toast.success('评论发表成功');
-      fetchArticle();
+      localStorage.setItem('userId', userId || '');
+      setContent('');
+      getUserInfo();
+      fetchComment();
     }).catch(err => toast.error(err.msg));
-  }, [article, replyComment, fetchArticle, content, email, nickName]);
+  }, [article, replyComment, fetchComment, content, email, nickName, userInfo]);
 
   const onCancel = useCallback(() => setReplyComment(null), [setReplyComment]);
 

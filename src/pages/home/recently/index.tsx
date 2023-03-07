@@ -5,10 +5,10 @@
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import Pagination from '../../../components/pagation';
-import { get } from '../../../utils/request';
+import { post } from '../../../utils/request';
 import { IArticle, IRecently } from '../../../interfaces/article';
 import { DEFAULT_PAGE_SIZE } from '../../../config';
-import Loop from "../../../components/loop";
+import Loop from '../../../components/loop';
 
 interface IRecentlyProp {
   scroll2Top: () => void;
@@ -27,7 +27,7 @@ const Recently: React.FC<IRecentlyProp> = ({ scroll2Top }) => {
   }, []);
 
   const fetchArticle = useCallback(async () => {
-    const article = await get('article/latest', {
+    const article = await post('article', {
       currentPage: page,
       pageSize,
     }) as IRecently;
@@ -37,9 +37,8 @@ const Recently: React.FC<IRecentlyProp> = ({ scroll2Top }) => {
   }, [page, pageSize]);
 
   useEffect(() => {
-    fetchArticle();
+    fetchArticle().then(r => console.info('recently article fetched'));
   }, [fetchArticle])
-
 
   return (
     <div>
@@ -47,7 +46,8 @@ const Recently: React.FC<IRecentlyProp> = ({ scroll2Top }) => {
         <h5 className="mt-5 mb-30">最近更新</h5>
       </div>
       <Loop article={article} />
-      <Pagination curPage={page} numPages={totalPage} numPagesAroundCurrent={1} onChangePage={onChangePage} />
+      {Array.isArray(article) && article.length !== 0 &&
+      <Pagination curPage={page} numPages={totalPage} numPagesAroundCurrent={1} onChangePage={onChangePage} />}
     </div>
   );
 

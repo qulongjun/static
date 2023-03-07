@@ -1,6 +1,6 @@
 /**
  * @File
- * @Author author@static.vip(瞿龙俊)
+ * @Author author@static.vip
  * @Date 2023/2/28 15:17:33
  */
 import React from 'react';

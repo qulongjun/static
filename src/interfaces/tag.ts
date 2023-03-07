@@ -12,7 +12,3 @@ export interface ITag {
   /* 分类链接 */
   link: string;
 }
-
-export interface ITagConfig {
-  list: ITag[];
-}

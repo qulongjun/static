@@ -16,7 +16,7 @@ const Related: React.FC<IRelated> = ({ article }) => {
   return (
     <div className="related-posts">
       <div className="widget-header-2 position-relative mb-30">
-        <h5 className="mt-5 mb-30">相关主题</h5>
+        <h5 className="mt-5 mb-30">推荐阅读</h5>
       </div>
       <Loop article={article} />
     </div>

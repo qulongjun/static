@@ -17,7 +17,8 @@ interface ILoop {
 
 const Loop: React.FC<ILoop> = ({ article }) => (
   <div className="loop-list loop-list-style-1">
-    {article.map((item) => (
+    {Array.isArray(article) && article.length === 0 && <p>当前分类暂无文章</p>}
+    {Array.isArray(article) && article.map((item) => (
       <article key={item.id} className="hover-up-2 transition-normal wow fadeInUp animated">
         <div className="row mb-40 list-style-2">
           <div className="col-md-4">

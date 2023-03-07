@@ -18,7 +18,6 @@ const Side: React.FC<ISide> = ({ author }) => (
   <div className="widget-area">
     <Author author={author} />
     <Popular />
-    <Category />
     <TagCloud />
   </div>
 );

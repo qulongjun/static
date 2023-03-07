@@ -6,7 +6,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import classNames from 'classnames';
 import {Link} from 'react-router-dom';
-import {get} from '../../../utils/request';
+import { get, post } from '../../../utils/request';
 import {getCategoryUrl} from '../../../utils/url';
 import Widget from '../../../components/widget';
 import {ICategory, ICategoryConfig} from '../../../interfaces/category';
@@ -15,7 +15,7 @@ const Category: React.FC = () => {
     const [category, setCategory] = useState<ICategory[]>([]);
 
     const fetchCategory = useCallback(async () => {
-        const category = await get('category') as ICategoryConfig;
+        const category = await post('category') as ICategoryConfig;
         setCategory(category.list);
     }, []);
 

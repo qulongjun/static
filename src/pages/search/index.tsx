@@ -15,80 +15,40 @@ import Loop from "../../components/loop";
 import Pagination from "../../components/pagation";
 import Author from "../common/author";
 import Popular from "../common/popular";
-import Category from "../common/category";
 import TagCloud from "../common/tagCloud";
-import { getCategoryUrl } from "../../utils/url";
 
-interface ISub {
+interface ISearch {
   author: IAuthor | null;
   scroll2Top: () => void;
 }
 
-const Sub: React.FC<ISub> = (props) => {
+const Search: React.FC<ISearch> = (props) => {
   const { author, scroll2Top } = props;
-  const { menu, subMenu, grandSubMenu, tagId } = useParams();
-  const [result, setResult] = useState<any>(null);
+  const { key } = useParams();
   const [page, setPage] = useState<number>(1);
   const [totalPage, setTotalPage] = useState<number>(20);
   const [article, setArticle] = useState<IArticle[]>([]);
+  const [count, setCount] = useState<number>(0);
   const [pageSize, setPageSize] = useState<number>(DEFAULT_PAGE_SIZE);
 
   useEffect(() => {
     scroll2Top();
-  }, [menu, subMenu, grandSubMenu, tagId]);
-
-  const typeLabel = useMemo(() => {
-    if ( tagId ) {
-      return [{ label: result?.label, link: '' }];
-    }
-    else {
-      const data = [];
-      data.push({ label: result?.label, link: getCategoryUrl(result?.link) });
-      if ( result?.child?.[0] ) data.push({ label: result.child[0].label, link: getCategoryUrl(result.child[0].link) });
-      if ( result?.child?.[0].child?.[0] ) data.push({
-        label: result.child[0].child[0].label,
-        link: getCategoryUrl(result.child[0].child[0].link),
-      });
-
-      return data;
-    }
-  }, [result, tagId]);
-
-  const fetchType = useCallback(async () => {
-    if ( tagId ) {
-      const result = await post(`tag/${tagId}`) as ITag[];
-      setResult(result[0]);
-    }
-    else {
-      const result = await post(`category/${grandSubMenu || subMenu || menu}`) as ICategory[];
-      setResult(result[0])
-    }
-
-  }, [menu, subMenu, grandSubMenu, tagId]);
+  }, [key]);
 
   const fetchArticle = useCallback(async () => {
-    const article = await post('article', {
+    const article = await post(`article/search/${key}`, {
       currentPage: page,
       pageSize,
-      type: 'sub',
-      ...tagId ? {
-        tag: result?.id,
-      } : {
-        category: result?.child?.[0]?.child?.[0]?.id || result?.child?.[0]?.id || result?.id,
-      },
+      key,
     }) as IRecently;
     setArticle(article.list);
+    setCount(article.count);
     setTotalPage(Math.ceil(article.count / pageSize));
-  }, [page, pageSize, result]);
+  }, [page, pageSize, key]);
 
   const onChangePage = useCallback((curPage: number) => {
     setPage(curPage);
   }, []);
-
-  useEffect(() => {
-    // console.info('trigger');
-    fetchType();
-  }, [menu, subMenu, grandSubMenu, tagId])
 
   useEffect(() => {
     fetchArticle();
@@ -99,11 +59,9 @@ const Sub: React.FC<ISub> = (props) => {
       <div className="archive-header pt-50">
         <div className="container">
           <h2
-            className="font-weight-900">{result?.child?.[0]?.child?.[0]?.label || result?.child?.[0]?.label || result?.label}</h2>
+            className="font-weight-900">搜索结果</h2>
           <div className="breadcrumb">
-            <Link to="/" rel="nofollow">首页</Link>
-            {typeLabel.map((item, index) => (
-              <React.Fragment key={index}><span /><Link to={item.link}>{item.label}</Link></React.Fragment>))}
+            共找到 {count} 篇关于 <strong> "{key}" </strong>的主题
           </div>
           <div className="bt-1 border-color-1 mt-30 mb-50" />
         </div>
@@ -133,4 +91,4 @@ const Sub: React.FC<ISub> = (props) => {
   );
 };
 
-export default Sub;
+export default Search;

@@ -1,22 +1,42 @@
 /**
  * @File
- * @Author author@static.vip(瞿龙俊)
+ * @Author author@static.vip
  * @Date 2023/2/27 17:37:05
  */
-import React from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from "react-router-dom";
 import { getCategoryUrl, getTagUrl } from "../../../utils/url";
-import { LinkOutlined, QrcodeOutlined, WechatOutlined } from "@ant-design/icons";
+import { HeartFilled, HeartOutlined, LinkOutlined, QrcodeOutlined, WechatOutlined } from "@ant-design/icons";
 import { IArticle } from "../../../interfaces/article";
 import { IAuthor } from "../../../interfaces/author";
 import Breadcrumb from "../../../components/breadCrumb";
+import { post } from "../../../utils/request";
+import toast from "react-hot-toast";
 
 interface IContent {
   article?: IArticle;
   author: IAuthor | null;
+  fetchArticle: () => void;
 }
 
-const Content: React.FC<IContent> = ({ article, author }) => {
+const Content: React.FC<IContent> = ({ article, author, fetchArticle }) => {
+
+  const isStared = useMemo(() => {
+    const starMap: string[] = JSON.parse(localStorage.getItem('starList') || '[]');
+    return !!starMap.find(item => parseInt(item, 10) === article?.id);
+  }, [article]);
+
+  const onStar = useCallback(async () => {
+    if ( !isStared ) {
+      await post(`/article/star/${article?.id}`);
+      const starMap: string[] = JSON.parse(localStorage.getItem('starList') || '[]');
+      starMap.push(article?.id + '');
+      localStorage.setItem('starList', JSON.stringify(starMap));
+      fetchArticle();
+      toast.success('点赞成功');
+    }
+    else toast.error('您点赞过当前文章，请勿重复点赞');
+  }, [article, isStared]);
 
   return <div>
     <div className="entry-header entry-header-style-1 mb-50">
@@ -28,12 +48,12 @@ const Content: React.FC<IContent> = ({ article, author }) => {
         <div className="col-md-6">
           <div className="entry-meta align-items-center meta-2 font-small color-muted">
             <p className="mb-5">
-              <Link to="/author" className="author-avatar">
+              <span className="author-avatar">
                 <img className="img-circle" src={author?.avatar} alt="" />
-              </Link>
+              </span>
               <span className="author-name font-weight-bold">{author?.name}</span>
             </p>
-            <span className="mr-10">{article?.date}</span>
+            <span className="mr-10">{article?.realDate}</span>
             <span className="has-dot">{article?.views} 阅读</span>
           </div>
         </div>
@@ -74,16 +94,17 @@ const Content: React.FC<IContent> = ({ article, author }) => {
       <div className="entry-bottom mt-50 mb-30 wow fadeIn animated">
         <div className="tags">
           <span>标签: </span>
-          {article?.tags?.map((tag, index) => <Link key={index} to={getTagUrl(tag.link)}>{tag.label}</Link>)}
+          {article?.tag?.map((tag, index) => <Link key={index} to={getTagUrl(tag.link)}>{tag.label}</Link>)}
         </div>
       </div>
       <div className="single-social-share clearfix wow fadeIn animated">
         <div className="entry-meta meta-1 font-small color-grey float-left mt-10">
-          <span className="hit-count mr-15">
-            <i className="elegant-icon icon_comment_alt mr-5" />{article?.comments?.length ?? 0} 评论
-          </span>
-          <span className="hit-count mr-15">
-            <i className="elegant-icon icon_like mr-5" />{article?.likes} 赞
+          <span className="hit-count mr-15 d-flex align-items-center" onClick={onStar}>
+            {
+              isStared ? <HeartFilled className="mr-5" style={{ color: '#ffccc7' }} /> :
+                <HeartOutlined className="mr-5" />
+            }
+            {article?.likes} 赞
           </span>
         </div>
         <ul className="header-social-network d-inline-block list-inline float-md-right mt-md-0 mt-4">

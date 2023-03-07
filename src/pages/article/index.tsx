@@ -12,7 +12,7 @@ import Category from '../common/category';
 import TagCloud from '../common/tagCloud';
 import { IAuthor } from '../../interfaces/author';
 import { IArticle, IComment } from '../../interfaces/article';
-import { get } from '../../utils/request';
+import { get, post } from '../../utils/request';
 import Related from './related';
 import Comment from './comment';
 import Reply from './reply';
@@ -27,22 +27,30 @@ const Article: React.FC<IArticleProps> = (props) => {
   const { author, scroll2Top } = props;
   const { id } = useParams();
   const [article, setArticle] = useState<IArticle>()
+  const [comments, setComments] = useState<IComment[]>([]);
+  const [related, setRelated] = useState<IArticle[]>([]);
   const [replyComment, setReplyComment] = useState<IComment | null>(null);
   const navigate = useNavigate();
-  const fetchArticle = useCallback(async () => setArticle(await get(`article/${id}`) as IArticle), [id]);
+  const fetchArticle = useCallback(async () => setArticle(await post(`article/${id}`) as IArticle), [id]);
+  const fetchRelated = useCallback(async () => setRelated(await post(`article/related/${id}`) as IArticle[]), [id]);
+  const fetchComment = useCallback(async () => setComments(await post(`comment/${id}`) as IComment[]), [id]);
+
+  useEffect(() => {
+    post(`article/view/${id}`);
+  }, [id]);
 
   useEffect(() => {
     scroll2Top();
   }, [id]);
 
   useEffect(() => {
-    fetchArticle().catch(r => {
+    fetchArticle().then(fetchComment).then(fetchRelated).catch(r => {
       if ( r.code === 404 ) {
         navigate('/404');
       }
       else toast.error(r.msg);
     });
-  }, [fetchArticle]);
+  }, [fetchArticle, fetchComment, fetchRelated]);
 
   const onReply = useCallback((comment: IComment) => {
     setReplyComment(comment);
@@ -54,21 +62,20 @@ const Article: React.FC<IArticleProps> = (props) => {
         <div className="row">
           <div className="col-lg-8">
             <div className="single-content2">
-              <Content article={article} author={author} />
-              <Related article={article?.related ?? []} />
-              <Comment comments={article?.comments ?? []} onReply={onReply} />
+              <Content article={article} author={author} fetchArticle={fetchArticle} />
+              <Related article={related} />
+              <Comment comments={comments} onReply={onReply} />
               <Reply
                 article={article}
                 replyComment={replyComment}
                 setReplyComment={setReplyComment}
-                fetchArticle={fetchArticle} />
+                fetchComment={fetchComment} />
             </div>
           </div>
           <div className="col-lg-4">
             <div className="widget-area">
               <Author author={author} />
               <Popular />
-              <Category />
               <TagCloud />
             </div>
           </div>

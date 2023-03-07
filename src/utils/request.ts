@@ -6,10 +6,11 @@
 
 import axios, { AxiosResponse } from 'axios';
 import QS from 'qs';
+import toast from "react-hot-toast";
 
 // 环境的切换
 if ( process.env.NODE_ENV == 'development' ) {
-  axios.defaults.baseURL = '/api';
+  axios.defaults.baseURL = 'http://127.0.0.1:7001/api';
 }
 else if ( process.env.NODE_ENV == 'debug' ) {
   axios.defaults.baseURL = '';
@@ -39,16 +40,27 @@ axios.interceptors.request.use(
 
 // 响应拦截器
 axios.interceptors.response.use(
-  response => {
+  (response) => {
     if ( response.status === 200 && response.data.code === 200 ) {
       return Promise.resolve(response.data);
     }
+    if ( response.data.code === 404 ) {
+      window.location.href = '/404';
+      return Promise.reject(response);
+    }
+
+    if(response.data.code === 502) {
+      toast.error('服务器异常，请稍后再试');
+      return Promise.reject(response);
+    }
+
     else {
       return Promise.reject(response);
     }
   },
   // 服务器状态码不是200的情况
   error => {
+    // console.log('error.response.status', error.response.status);
     if ( error.response.status ) {
       switch ( error.response.status ) {
         // 401: 未登录

@@ -249,6 +249,11 @@ button.box-shadow {
     line-height: 1;
     color: #666;
 }
+
+.hit-count {
+    cursor: pointer;
+}
+
 .entry-meta.meta-2 .author-img img {
     width: 22px;
     height: 22px;

@@ -53,7 +53,7 @@ const Comment: React.FC<ICommentProps> = ({ comments, onReply }) => {
 
   const commentTree = useMemo(() => {
     return arrayToTree(comments, {
-      parentProperty: 'replyId',
+      parentProperty: 'parent_id',
       childrenProperty: 'children',
       customID: 'id',
     })
@@ -75,6 +75,7 @@ const Comment: React.FC<ICommentProps> = ({ comments, onReply }) => {
         <h5 className="mt-5 mb-30">主题评论</h5>
       </div>
 
+      {Array.isArray(comments) && comments.length === 0 && <div>暂无评论</div>}
       {
         commentTree.map(item => (
           <div className="comment-list wow fadeIn animated" key={item.id}>
