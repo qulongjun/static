@@ -9,14 +9,39 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "@bramus/pagination-sequence": "^1.2.0",
+    "array-to-tree": "^3.3.2",
+    "axios": "^1.3.4",
+    "classnames": "^2.3.2",
+    "copy-to-clipboard": "^3.3.3",
+    "metismenujs": "^1.4.0",
+    "nanoid": "^4.0.1",
+    "qrcode.react": "^3.1.0",
+    "qs": "^6.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-router-dom": "^6.8.1",
+    "react-scroll-up": "^1.4.0",
+    "react-slick": "^0.29.0",
+    "react-tiny-popover": "^7.2.3",
+    "react-toastify": "^9.1.1",
+    "slick-carousel": "^1.8.1",
+    "typo.css": "^2.1.2",
+    "use-scroll-to-2": "^1.0.5"
   },
   "devDependencies": {
+    "@types/qs": "^6.9.7",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/react-slick": "^0.23.10",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "mockjs": "^1.1.0",
     "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "vite": "^4.1.0",
+    "vite-plugin-mock": "^2.9.6"
   }
 }
