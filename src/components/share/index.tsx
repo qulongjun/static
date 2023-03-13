@@ -1,15 +1,15 @@
 /**
- * @File 页面组件 - 分享
+ * @File 公共组件 - 分享
  * @Author author@static.vip
  * @Date 2023/2/24 19:26:01
  */
 import React, { useCallback, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Popover } from 'react-tiny-popover'
 import toast from 'react-hot-toast';
 import { QRCodeSVG } from 'qrcode.react';
 import copy from 'copy-to-clipboard';
-import { LinkOutlined, QrcodeOutlined, ShareAltOutlined, WechatOutlined } from "@ant-design/icons";
+import { LinkOutlined, QrcodeOutlined, ShareAltOutlined } from '@ant-design/icons';
 
 interface IShare {
   /* 分享 URL */
@@ -55,12 +55,7 @@ const Share: React.FC<IShare> = ({ shareUrl }) => {
         </Popover>
       </li>
       <li>
-        <Link
-          to=""
-          onClick={onCopy}
-          className="tw"
-          title="分享链接"
-        >
+        <Link to="" onClick={onCopy} className="tw" title="分享链接">
           <LinkOutlined />
         </Link>
       </li>

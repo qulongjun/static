@@ -1,5 +1,5 @@
 /**
- * @File Widget 卡片
+ * @File 公共组件 - Widget
  * @Author author@static.vip
  * @Date 2023/2/25 07:13:51
  */

@@ -1,5 +1,5 @@
 /**
- * @File 页面组件 - 菜单
+ * @File 公共组件 - 菜单
  * @Author author@static.vip
  * @Date 2023/2/23 14:27:36
  */
@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import NavMenu from '../nav';
 import { post } from '../../utils/request';
-import { ICategory } from "../../interfaces/category";
-import { getCategoryUrl } from "../../utils/url";
+import { ICategory } from '../../interfaces/category';
+import { getCategoryUrl } from '../../utils/url';
 
 const Menu: React.FC = () => {
   const [scroll, setScroll] = useState<boolean>(false);

@@ -6,7 +6,7 @@
 import React, { useMemo } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import {getArticleUrl, getCategoryUrl} from '../../../utils/url';
+import { getArticleUrl } from '../../../utils/url';
 import { IArticle } from '../../../interfaces/article';
 import Breadcrumb from "../../../components/breadCrumb";
 

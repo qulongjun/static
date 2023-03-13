@@ -1,5 +1,5 @@
 /**
- * @File 首页 - 文章分类
+ * @File 公共页 - 文章分类
  * @Author author@static.vip
  * @Date 2023/2/25 08:12:43
  */

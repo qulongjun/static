@@ -1,13 +1,13 @@
 /**
- * @File 页面组件 - 搜索
+ * @File 公共组件 - 搜索
  * @Author author@static.vip
  * @Date 2023/2/23 14:03:44
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ITag } from "../../interfaces/tag";
-import { post } from "../../utils/request";
-import { getTagUrl } from "../../utils/url";
+import { ITag } from '../../interfaces/tag';
+import { post } from '../../utils/request';
+import { getTagUrl } from '../../utils/url';
 
 interface ISearch {
   visible: boolean;

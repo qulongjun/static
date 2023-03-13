@@ -1,5 +1,5 @@
 /**
- * @File
+ * @File 文章页 - 入口
  * @Author author@static.vip
  * @Date 2023/2/26 12:19:48
  */
@@ -8,11 +8,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Author from '../common/author';
 import Popular from '../common/popular';
-import Category from '../common/category';
 import TagCloud from '../common/tagCloud';
 import { IAuthor } from '../../interfaces/author';
 import { IArticle, IComment } from '../../interfaces/article';
-import { get, post } from '../../utils/request';
+import { post } from '../../utils/request';
 import Related from './related';
 import Comment from './comment';
 import Reply from './reply';
@@ -83,7 +82,6 @@ const Article: React.FC<IArticleProps> = (props) => {
       </div>
     </main>
   )
-
 }
 
 export default Article;

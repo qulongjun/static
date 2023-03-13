@@ -1,11 +1,11 @@
 /**
- * @File
+ * @File 联系我们
  * @Author author@static.vip
  * @Date 2023/3/7 19:33:23
  */
 import React from 'react';
 import { IAuthor } from '../../interfaces/author';
-import { GithubOutlined, ZhihuOutlined } from "@ant-design/icons";
+import { GithubOutlined, ZhihuOutlined } from '@ant-design/icons';
 
 interface IContact {
   author: IAuthor | null;

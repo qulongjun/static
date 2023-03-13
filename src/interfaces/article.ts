@@ -1,11 +1,11 @@
 /**
- * @File
+ * @File 接口 - 文章
  * @Author author@static.vip
  * @Date 2023/2/24 14:45:29
  */
-import { ICategory } from "./category";
-import { IAuthor } from "./author";
-import { ITag } from "./tag";
+import { ICategory } from './category';
+import { IAuthor } from './author';
+import { ITag } from './tag';
 
 export interface IComment {
   /* 评论ID */
@@ -32,7 +32,7 @@ export interface IArticle {
   /* 主题封面 */
   cover?: string;
   /* 主题分类 */
-  category: ICategory
+  category: ICategory[]
   /* 主题标题 */
   title: string;
   /* 主题内容 */
@@ -73,16 +73,4 @@ export interface IRecently {
   list: IArticle[];
   /* 主题数量 */
   count: number;
-}
-
-export interface IPopularConfig {
-  /* 主题列表 */
-  list: IArticle[];
-}
-
-/* 发表评论实体 */
-export interface ISendComment {
-  content: string;
-  nickName?: string;
-  email?: string;
 }

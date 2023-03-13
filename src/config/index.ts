@@ -1,5 +1,5 @@
 /**
- * @File 全局 - 通用配置
+ * @File 公共配置 - 通用配置
  * @Author author@static.vip
  * @Date 2023/2/24 23:58:51
  */

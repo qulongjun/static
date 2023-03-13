@@ -1,17 +1,17 @@
 /**
- * @File
+ * @File 文章页 - 正文内容
  * @Author author@static.vip
  * @Date 2023/2/27 17:37:05
  */
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link } from "react-router-dom";
-import { getCategoryUrl, getTagUrl } from "../../../utils/url";
-import { HeartFilled, HeartOutlined, LinkOutlined, QrcodeOutlined, WechatOutlined } from "@ant-design/icons";
-import { IArticle } from "../../../interfaces/article";
-import { IAuthor } from "../../../interfaces/author";
-import Breadcrumb from "../../../components/breadCrumb";
-import { post } from "../../../utils/request";
-import toast from "react-hot-toast";
+import React, { useCallback, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { HeartFilled, HeartOutlined, LinkOutlined, QrcodeOutlined, WechatOutlined } from '@ant-design/icons';
+import { getTagUrl } from '../../../utils/url';
+import { IArticle } from '../../../interfaces/article';
+import { IAuthor } from '../../../interfaces/author';
+import Breadcrumb from '../../../components/breadCrumb';
+import { post } from '../../../utils/request';
 
 interface IContent {
   article?: IArticle;

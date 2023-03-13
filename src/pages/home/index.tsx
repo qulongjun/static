@@ -1,15 +1,15 @@
 /**
- * @File
+ * @File 首页 - 入口
  * @Author author@static.vip
  * @Date 2023/2/24 11:29:48
  */
 import React from 'react';
 import { useScrollTo } from 'use-scroll-to-2';
-import Featured from "./featured";
-import VerticalCarousel from "./verticalCarousel";
-import { IAuthor } from "../../interfaces/author";
-import Recently from "./recently";
-import Side from "../common/side";
+import Featured from './featured';
+import VerticalCarousel from './verticalCarousel';
+import { IAuthor } from '../../interfaces/author';
+import Recently from './recently';
+import Side from '../common/side';
 
 interface IHome {
   /* 作者信息 */

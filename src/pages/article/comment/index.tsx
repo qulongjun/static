@@ -3,10 +3,10 @@
  * @Author author@static.vip
  * @Date 2023/2/27 16:25:37
  */
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import arrayToTree from 'array-to-tree';
+import classNames from 'classnames';
 import { IComment } from '../../../interfaces/article';
-import classNames from "classnames";
 
 interface ICommentProps {
   /* 评论对象列表 */

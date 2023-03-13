@@ -1,15 +1,15 @@
 /**
- * @File 首页 - 热门主题
+ * @File 公共页 - 热门主题
  * @Author author@static.vip
  * @Date 2023/2/25 07:13:51
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getArticleUrl } from "../../../utils/url";
-import { get, post } from "../../../utils/request";
-import { IArticle } from "../../../interfaces/article";
-import Widget from "../../../components/widget";
-import classNames from "classnames";
+import classNames from 'classnames';
+import { getArticleUrl } from '../../../utils/url';
+import { post } from '../../../utils/request';
+import { IArticle } from '../../../interfaces/article';
+import Widget from '../../../components/widget';
 
 const Popular: React.FC = () => {
   const [article, setArticle] = useState<IArticle[]>([]);

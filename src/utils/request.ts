@@ -4,9 +4,9 @@
  * @Date 2023/2/23 15:49:47
  */
 
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import QS from 'qs';
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast';
 
 // 环境的切换
 if ( process.env.NODE_ENV == 'development' ) {

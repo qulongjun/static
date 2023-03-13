@@ -1,10 +1,10 @@
 /**
- * @File 页面组件 - 页码
+ * @File 公共组件 - 页码
  * @Author author@static.vip
  * @Date 2023/2/24 19:41:51
  */
 import React, { useCallback, useMemo } from 'react';
-import classNames from "classnames";
+import classNames from 'classnames';
 // @ts-ignore
 import { generateFromObj } from '@bramus/pagination-sequence';
 
@@ -27,9 +27,7 @@ const Pagination: React.FC<IPagination> = (props) => {
   const { curPage, numPages, numPagesAtEdges = 1, numPagesAroundCurrent = 2, onChangePage } = props;
 
   const pageList = useMemo(() => {
-
-    console.log(curPage, numPages, numPagesAtEdges, numPagesAroundCurrent)
-
+    
     return generateFromObj({
       curPage,
       numPages: numPages === 0 ? 1 : numPages,

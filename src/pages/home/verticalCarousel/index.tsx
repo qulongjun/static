@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { post } from '../../../utils/request';
 import { IArticle } from '../../../interfaces/article';
-import {getArticleUrl, getCategoryUrl} from '../../../utils/url';
+import { getArticleUrl } from '../../../utils/url';
 import Breadcrumb from "../../../components/breadCrumb";
 
 const VerticalCarousel: React.FC = () => {

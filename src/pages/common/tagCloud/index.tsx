@@ -1,15 +1,15 @@
 /**
- * @File 首页 - 标签云
+ * @File 公共页 - 标签云
  * @Author author@static.vip
  * @Date 2023/2/25 08:12:43
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 import { post } from '../../../utils/request';
 import Widget from '../../../components/widget';
-import classNames from "classnames";
-import { ITag } from "../../../interfaces/tag";
-import { getTagUrl } from "../../../utils/url";
+import { ITag } from '../../../interfaces/tag';
+import { getTagUrl } from '../../../utils/url';
 
 const TagCloud: React.FC = () => {
   const [tag, setTag] = useState<ITag[]>([]);

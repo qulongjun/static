@@ -1,21 +1,19 @@
 /**
- * @File
+ * @File 搜索页
  * @Author author@static.vip
  * @Date 2023/2/28 14:12:08
  */
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { IAuthor } from '../../interfaces/author';
-import { get, post } from "../../utils/request";
-import { ICategory } from "../../interfaces/category";
-import { ITag } from "../../interfaces/tag";
-import { IArticle, IRecently } from "../../interfaces/article";
-import { DEFAULT_PAGE_SIZE } from "../../config";
-import Loop from "../../components/loop";
-import Pagination from "../../components/pagation";
-import Author from "../common/author";
-import Popular from "../common/popular";
-import TagCloud from "../common/tagCloud";
+import { post } from '../../utils/request'
+import { IArticle, IRecently } from '../../interfaces/article';
+import { DEFAULT_PAGE_SIZE } from '../../config';
+import Loop from '../../components/loop';
+import Pagination from '../../components/pagation';
+import Author from '../common/author';
+import Popular from '../common/popular';
+import TagCloud from '../common/tagCloud';
 
 interface ISearch {
   author: IAuthor | null;

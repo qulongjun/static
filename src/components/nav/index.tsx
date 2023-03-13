@@ -1,5 +1,5 @@
 /**
- * @File 页面组件 - Nav
+ * @File 公共组件 - Nav
  * @Author author@static.vip
  * @Date 2023/2/23 14:53:08
  */
@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import MetisMenu from 'metismenujs';
 import 'metismenujs/style';
-import { INavConfig } from "../../interfaces/menu";
+import { ICategory } from '../../interfaces/category';
 
 interface INavMenu {
   visible: boolean;
-  navData: INavConfig[];
+  navData: ICategory[];
 }
 
 const NavMenu: React.FC<INavMenu> = (props) => {

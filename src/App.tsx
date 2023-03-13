@@ -1,25 +1,28 @@
+/**
+ * @File 全局入口
+ * @Author author@static.vip
+ * @Date 2023/2/23 15:49:47
+ */
 import React, { useCallback, useEffect, useState } from 'react';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 import { useScrollTo } from 'use-scroll-to-2';
 import { Toaster } from 'react-hot-toast';
 import Layout from './components/layout';
 import Header from './components/header';
-import SideBar from './components/sidebar';
 import Footer from './components/footer';
 import Search from './components/search';
 import BackToTop from './components/backToTop';
 import { get } from './utils/request';
 import { IAuthor } from './interfaces/author';
 import Home from './pages/home';
-import NotFound from "./pages/notFound";
+import NotFound from './pages/notFound';
 import Article from './pages/article';
-import Sub from "./pages/sub";
+import Sub from './pages/sub';
 import SearchPage from './pages/search';
-import Contact from "./pages/contact";
+import Contact from './pages/contact';
 
 function App() {
   const [searchModal, setSearchModal] = useState<boolean>(false);
-  const [sideBarModal, setSideBarModal] = useState<boolean>(false);
   const [author, setAuthor] = useState<IAuthor | null>(null);
   const [ref, scroll] = useScrollTo({
     offsetTop: 100,
@@ -28,9 +31,6 @@ function App() {
   const onToggleSearch = useCallback(() => setSearchModal(!searchModal), [searchModal]);
 
   const onCloseSearch  = useCallback(() => setSearchModal(false), []);
-
-  /* 开关侧边栏 */
-  const onToggleSideBar = useCallback(() => setSideBarModal(!sideBarModal), [sideBarModal]);
 
   const fetchAuthor = useCallback(async () => {
     const author = await get('author') as IAuthor;
@@ -44,8 +44,6 @@ function App() {
   return (
     <div ref={ref as any}>
       <Layout>
-        {/* 侧边栏 SideBar */}
-        <SideBar visible={sideBarModal} onToggleSideBar={onToggleSideBar} />
         {/* 导航栏 Header */}
         <Header onToggleSearch={onToggleSearch} />
         {/* 搜索框 Search */}

@@ -1,14 +1,13 @@
 /**
- * @File 首页 - 作者
+ * @File 公共页 - 关于作者
  * @Author author@static.vip
  * @Date 2023/2/24 16:58:07
  */
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { GithubOutlined, ZhihuOutlined } from "@ant-design/icons";
+import { GithubOutlined, ZhihuOutlined } from '@ant-design/icons';
+import classNames from 'classnames';
 import { IAuthor } from '../../../interfaces/author';
-import Widget from "../../../components/widget";
-import classNames from "classnames";
+import Widget from '../../../components/widget';
 
 interface Props {
   author: IAuthor | null;
