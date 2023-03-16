@@ -5,7 +5,7 @@
  */
 .slicknav_btn{position:relative;display:block;vertical-align:middle;float:left;padding:0.438em 0.625em 0.438em 0.625em;line-height:1.125em;cursor:pointer;}
 .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar{margin-top:0.188em;}
-.slicknav_menu{*zoom:1;}
+.slicknav_menu{zoom:1;}
 .slicknav_menu .slicknav_icon:before{background:transparent;display:block;content:"";position:absolute;}
 .slicknav_menu .slicknav_no-text{margin:0;}
 .slicknav_menu .slicknav_icon-bar{display:block;}
