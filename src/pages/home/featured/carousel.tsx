@@ -42,7 +42,7 @@ const Carousel: React.FC<IPostCarousel> = (props) => {
                     <Breadcrumb article={item} />
                   </div>
                   <h3 className="post-title font-weight-900 mb-20">
-                    <Link to={getArticleUrl(item.id)}>{item.title}</Link>
+                    <Link to={getArticleUrl(item.id, item.link)}>{item.title}</Link>
                   </h3>
                   <div className="entry-meta meta-1 font-small text-white mt-10 pr-5 pl-5">
                     <span className="post-on">{item.date}</span>

@@ -27,7 +27,7 @@ const Pagination: React.FC<IPagination> = (props) => {
   const { curPage, numPages, numPagesAtEdges = 1, numPagesAroundCurrent = 2, onChangePage } = props;
 
   const pageList = useMemo(() => {
-    
+
     return generateFromObj({
       curPage,
       numPages: numPages === 0 ? 1 : numPages,

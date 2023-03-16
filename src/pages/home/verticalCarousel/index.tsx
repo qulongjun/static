@@ -43,7 +43,7 @@ const VerticalCarousel: React.FC = () => {
                           <Breadcrumb article={article} />
                         </div>
                         <h1 className="post-title mb-20 font-weight-900 text-white">
-                          <Link to={getArticleUrl(article.id)}>{article.title}</Link>
+                          <Link to={getArticleUrl(article.id, article.link)}>{article.title}</Link>
                         </h1>
                         <div className="entry-meta meta-1 font-small text-white mt-10 pr-5 pl-5">
                           <span className="post-on">{article.date}</span>

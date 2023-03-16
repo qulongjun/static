@@ -24,7 +24,7 @@ interface IArticleProps {
 
 const Article: React.FC<IArticleProps> = (props) => {
   const { author, scroll2Top } = props;
-  const { id } = useParams();
+  const { id, link } = useParams();
   const [article, setArticle] = useState<IArticle>()
   const [comments, setComments] = useState<IComment[]>([]);
   const [related, setRelated] = useState<IArticle[]>([]);

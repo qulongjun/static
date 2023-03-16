@@ -27,7 +27,7 @@ const Loop: React.FC<ILoop> = ({ article }) => (
                 className="img-hover-slide border-radius-5 position-relative"
                 style={{ backgroundImage: `url(${item.cover})` }}
               >
-                <Link to={getArticleUrl(item.id)} className="img-link" />
+                <Link to={getArticleUrl(item.id, item.link)} className="img-link" />
               </div>
               <Share />
             </div>
@@ -38,7 +38,7 @@ const Loop: React.FC<ILoop> = ({ article }) => (
                 <Breadcrumb article={item} />
               </div>
               <h5 className="post-title font-weight-900 mb-20">
-                <Link to={getArticleUrl(item.id)}>{item.title}</Link>
+                <Link to={getArticleUrl(item.id, item.link)}>{item.title}</Link>
               </h5>
               <div className="entry-meta meta-1 float-left font-x-small text-uppercase">
                 <span className="post-on">{item.date}</span>

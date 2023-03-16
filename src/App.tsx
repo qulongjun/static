@@ -52,7 +52,7 @@ function App() {
         <Routes>
           <Route path="/404" element={<NotFound />} />
           <Route path="/contact" element={<Contact author={author} />} />
-          <Route path="/article/:id" element={<Article author={author} scroll2Top={scroll} />} />
+          <Route path="/article/:id/:link" element={<Article author={author} scroll2Top={scroll} />} />
           <Route path="/search/:key" element={<SearchPage author={author} scroll2Top={scroll} />} />
           <Route path="/tag/:tagId" element={<Sub author={author} scroll2Top={scroll} />} />
           <Route path="/:menu" element={<Sub author={author} scroll2Top={scroll} />} />

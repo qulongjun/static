@@ -33,7 +33,7 @@ const Popular: React.FC = () => {
                 <div className="d-flex hover-up-2 transition-normal">
                   <div className="post-content media-body">
                     <h6 className="post-title mb-15 text-limit-2-row font-medium">
-                      <Link to={getArticleUrl(article.id)}>{article.title}</Link>
+                      <Link to={getArticleUrl(article.id, article.link)}>{article.title}</Link>
                     </h6>
                     <div className="entry-meta meta-1 float-left font-x-small text-uppercase">
                       <span className="post-on">{article.date}</span>
@@ -42,7 +42,7 @@ const Popular: React.FC = () => {
                   </div>
                   <div
                     className="post-thumb post-thumb-80 d-flex ml-15 border-radius-5 img-hover-scale overflow-hidden">
-                    <Link to={getArticleUrl(article.id)} className="color-white">
+                    <Link to={getArticleUrl(article.id, article.link)} className="color-white">
                       <img src={article.cover} alt="" />
                     </Link>
                   </div>

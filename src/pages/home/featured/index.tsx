@@ -70,7 +70,7 @@ const Featured: React.FC = () => {
                   className="post-thumb thumb-overlay img-hover-slide position-relative"
                   style={{ backgroundImage: `url(${article.cover})` }}
                 >
-                  <Link to={getArticleUrl(article.id)} className="img-link" />
+                  <Link to={getArticleUrl(article.id, article.link)} className="img-link" />
                   <Share />
                 </div>
                 <div className="post-content p-30">
@@ -79,7 +79,7 @@ const Featured: React.FC = () => {
                   </div>
                   <div className="d-flex post-card-content">
                     <h5 className="post-title mb-20 font-weight-900">
-                      <Link to={getArticleUrl(article.id)}>{article.title}</Link>
+                      <Link to={getArticleUrl(article.id, article.link)}>{article.title}</Link>
                     </h5>
                     <div className="entry-meta meta-1 float-left font-x-small text-uppercase">
                       <span className="post-on">{article.date}</span>

@@ -59,6 +59,8 @@ export interface IArticle {
   comments: IComment[];
   /* 相关主题 */
   related: IArticle[];
+  /* 文章链接 */
+  link: string;
 }
 
 export interface IFeaturedConfig {
