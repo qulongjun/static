@@ -71,7 +71,7 @@ const Featured: React.FC = () => {
                   style={{ backgroundImage: `url(${article.cover})` }}
                 >
                   <Link to={getArticleUrl(article.id, article.link)} className="img-link" />
-                  <Share />
+                  <Share shareUrl={location.origin + getArticleUrl(article.id, article.link)} />
                 </div>
                 <div className="post-content p-30">
                   <div className="entry-meta meta-0 font-small mb-10">

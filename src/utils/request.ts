@@ -16,7 +16,7 @@ else if ( process.env.NODE_ENV == 'debug' ) {
   axios.defaults.baseURL = '';
 }
 else if ( process.env.NODE_ENV == 'production' ) {
-  axios.defaults.baseURL = '/api';
+  axios.defaults.baseURL = 'https://api.static.vip/api';
 }
 
 // 请求超时时间

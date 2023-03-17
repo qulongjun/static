@@ -29,7 +29,7 @@ const Loop: React.FC<ILoop> = ({ article }) => (
               >
                 <Link to={getArticleUrl(item.id, item.link)} className="img-link" />
               </div>
-              <Share />
+              <Share shareUrl={location.origin + getArticleUrl(item.id, item.link)} />
             </div>
           </div>
           <div className="col-md-8 align-self-center">
