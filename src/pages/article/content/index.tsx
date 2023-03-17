@@ -7,11 +7,12 @@ import React, { useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { HeartFilled, HeartOutlined, LinkOutlined, QrcodeOutlined, WechatOutlined } from '@ant-design/icons';
-import { getTagUrl } from '../../../utils/url';
+import { getArticleUrl, getTagUrl } from '../../../utils/url';
 import { IArticle } from '../../../interfaces/article';
 import { IAuthor } from '../../../interfaces/author';
 import Breadcrumb from '../../../components/breadCrumb';
 import { post } from '../../../utils/request';
+import Share from "../../../components/share";
 
 interface IContent {
   article?: IArticle;
@@ -57,31 +58,31 @@ const Content: React.FC<IContent> = ({ article, author, fetchArticle }) => {
             <span className="has-dot">{article?.views} 阅读</span>
           </div>
         </div>
-        <div className="col-md-6 text-right d-none d-md-inline">
-          <ul className="header-social-network d-inline-block list-inline mr-15">
-            <li className="list-inline-item text-muted">
-              <span>分享至:</span>
-            </li>
-            <li className="list-inline-item">
-              <Link to="#" className="social-icon wc text-xs-center"
-                    target="_blank">
-                <WechatOutlined />
-              </Link>
-            </li>
-            <li className="list-inline-item">
-              <Link to="#" className="social-icon pt text-xs-center"
-                    target="_blank">
-                <QrcodeOutlined />
-              </Link>
-            </li>
-            <li className="list-inline-item">
-              <Link to="#" className="social-icon tw text-xs-center"
-                    target="_blank">
-                <LinkOutlined />
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {/*<div className="col-md-6 text-right d-none d-md-inline">*/}
+        {/*  <ul className="header-social-network d-inline-block list-inline mr-15">*/}
+        {/*    <li className="list-inline-item text-muted">*/}
+        {/*      <span>分享至:</span>*/}
+        {/*    </li>*/}
+        {/*    <li className="list-inline-item">*/}
+        {/*      <Link to="#" className="social-icon wc text-xs-center"*/}
+        {/*            target="_blank">*/}
+        {/*        <WechatOutlined />*/}
+        {/*      </Link>*/}
+        {/*    </li>*/}
+        {/*    <li className="list-inline-item">*/}
+        {/*      <Link to="#" className="social-icon pt text-xs-center"*/}
+        {/*            target="_blank">*/}
+        {/*        <QrcodeOutlined />*/}
+        {/*      </Link>*/}
+        {/*    </li>*/}
+        {/*    <li className="list-inline-item">*/}
+        {/*      <Link to="#" className="social-icon tw text-xs-center"*/}
+        {/*            target="_blank">*/}
+        {/*        <LinkOutlined />*/}
+        {/*      </Link>*/}
+        {/*    </li>*/}
+        {/*  </ul>*/}
+        {/*</div>*/}
       </div>
     </div>
     <figure className="image mb-40 m-auto text-center border-radius-10">
@@ -107,27 +108,27 @@ const Content: React.FC<IContent> = ({ article, author, fetchArticle }) => {
             {article?.likes} 赞
           </span>
         </div>
-        <ul className="header-social-network d-inline-block list-inline float-md-right mt-md-0 mt-4">
-          <li className="list-inline-item text-muted">
-            <span>分享至:</span>
-          </li>
+        {/*<ul className="header-social-network d-inline-block list-inline float-md-right mt-md-0 mt-4">*/}
+        {/*  <li className="list-inline-item text-muted">*/}
+        {/*    <span>分享至:</span>*/}
+        {/*  </li>*/}
 
-          <li className="list-inline-item">
-            <Link to="#" className="social-icon wc text-xs-center" target="_blank">
-              <WechatOutlined />
-            </Link>
-          </li>
-          <li className="list-inline-item">
-            <Link to="#" className="social-icon pt text-xs-center" target="_blank">
-              <QrcodeOutlined />
-            </Link>
-          </li>
-          <li className="list-inline-item">
-            <Link to="#" className="social-icon tw text-xs-center" target="_blank">
-              <LinkOutlined />
-            </Link>
-          </li>
-        </ul>
+        {/*  <li className="list-inline-item">*/}
+        {/*    <Link to="#" className="social-icon wc text-xs-center" target="_blank">*/}
+        {/*      <WechatOutlined />*/}
+        {/*    </Link>*/}
+        {/*  </li>*/}
+        {/*  <li className="list-inline-item">*/}
+        {/*    <Link to="#" className="social-icon pt text-xs-center" target="_blank">*/}
+        {/*      <QrcodeOutlined />*/}
+        {/*    </Link>*/}
+        {/*  </li>*/}
+        {/*  <li className="list-inline-item">*/}
+        {/*    <Link to="#" className="social-icon tw text-xs-center" target="_blank">*/}
+        {/*      <LinkOutlined />*/}
+        {/*    </Link>*/}
+        {/*  </li>*/}
+        {/*</ul>*/}
       </div>
     </article>
   </div>;

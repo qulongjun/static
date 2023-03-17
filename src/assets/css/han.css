@@ -136,9 +136,17 @@ html {
   list-style: disc;
 }
 
+#write ul li, #write-ul li {
+  list-style: disc;
+}
+
 #write ol, #write-ol {
   list-style: decimal;
   margin-left: 1.9em;
+}
+
+#write ol li, #write-ul li {
+  list-style: decimal;
 }
 
 #write li ul, #write li ol, #write-ul ul, #write-ul ol, #write-ol ul, #write-ol ol {
