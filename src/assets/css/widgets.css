@@ -389,6 +389,10 @@ span.has-dot::before {
     color: #fff;
 }
 
+.carausel-post-1 .post-thumb {
+    display: inline !important;
+}
+
 /*featured-slider-3*/
 .featured-slider-3 .post-content-overlay {
     position: absolute;
